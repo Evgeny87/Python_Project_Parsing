@@ -6,37 +6,10 @@ import app_logger
 import csv_rw
 # import package1
 import parse_bs4
+import text_replace
 
 
 logger = app_logger.get_logger(__name__)
-
-
-def link_replace(link):
-    link = link.strip()
-    while "  " in link:
-        link = link.replace("\r", "")
-        link = link.replace("\n", "")
-        # link = link.replace('\xeb', 'е')
-        link = link.replace("  ", " ")
-    link = link.strip()
-    return link
-
-
-def link_replace_tel(link):
-    link = link.strip()
-    while "  " in link:
-        link = link.replace("\r", "")
-        link = link.replace("\n", "")
-        # link = link.replace('\u2212', '-')
-        # link = link.replace('\xeb', 'е')
-        link = link.replace("-", "")
-        link = link.replace("(", "")
-        link = link.replace(")", "")
-        link = link.replace("  ", "")
-        link = link.replace(" ", "")
-        link = link.replace("+7", "8")
-    link = link.strip()
-    return link
 
 
 def list_links(url_site="", teg1="", selector="", name="", lvl=0, title_ishod=""):
@@ -88,7 +61,7 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0, title_ishod=""
                     if lvl == 4:
                         for ab in abc:
                             result_list[href].append(ab.get("href"))
-                            link = link_replace(ab.text)
+                            link = text_replace.link_replace(ab.text)
                             result_list[title].append(link)
                             k += 1
                         for i in range(k+1, 100):
@@ -98,11 +71,11 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0, title_ishod=""
                                 break
                             else:
                                 result_list[href].append(ab.get("href"))
-                                link = link_replace(ab.text)
+                                link = text_replace.link_replace(ab.text)
                                 result_list[title].append(link)
                     else:
                         result_list[href].append('https://perevozka24.ru' + abc.get("href"))
-                        link = link_replace(abc.text)
+                        link = text_replace.link_replace(abc.text)
                         result_list[title].append(link)
         return result_list
 
@@ -131,36 +104,36 @@ def list_links_tel(url_site="", teg="", selector="", name1="", name2="", name3="
                 links2 = str(links2).split("\n", 2)[1]
             else:
                 links2 = str(links2).split("\n\n", 2)[1]
-            links2 = link_replace(links2)
+            links2 = text_replace.link_replace(links2)
             links3 = link.find(teg, {selector: name3})
             tel_tel = links3.find_all('span', {"class": 'javalnk'})
-            tel_tel = (link_replace_tel(str(tel_tel)).split(','))
+            tel_tel = (text_replace.link_replace_tel(str(tel_tel)).split(','))
             for elem_tel in tel_tel:
                 elem_tel = re.split('<|>', elem_tel)
                 if elem_tel[0] != "[]":
-                    if link_replace(elem_tel[2]) != "WhatsApp":
-                        tel10 = link_replace_tel(elem_tel[2])
+                    if text_replace.link_replace(elem_tel[2]) != "WhatsApp":
+                        tel10 = text_replace.link_replace_tel(elem_tel[2])
                         result_list[name].append(links2)
                         result_list[tel1].append(tel10)
                         result_list[tel2].append("telefon")
             tel_whatsapp = links3.find_all('span', {"class": 'whatsapp-btn javalnk blank'})
-            tel_whatsapp = link_replace_tel(str(tel_whatsapp)).split(',')
+            tel_whatsapp = text_replace.link_replace_tel(str(tel_whatsapp)).split(',')
             for elem_whatsapp in tel_whatsapp:
                 elem_whatsapp = re.split('/|">', elem_whatsapp)
                 if elem_whatsapp[0] != "[]":
                     if elem_whatsapp[3] != None:
-                        tel10 = link_replace_tel("+" + elem_whatsapp[3])
+                        tel10 = text_replace.link_replace_tel("+" + elem_whatsapp[3])
                         tel10 = tel10.replace("+7", "8")
                         result_list[name].append(links2)
                         result_list[tel1].append(tel10)
                         result_list[tel2].append("whatsapp")
             tel_viber = links3.find_all('a', {"class": 'viber-btn'})
-            tel_viber = link_replace_tel(str(tel_viber)).split(',')
+            tel_viber = text_replace.link_replace_tel(str(tel_viber)).split(',')
             for elem_viber in tel_viber:
                 elem_viber = re.split('"|B', elem_viber)
                 if elem_viber[0] != "[]":
                     if elem_viber[3] != None:
-                        tel10 = link_replace_tel("+" + elem_viber[4])
+                        tel10 = text_replace.link_replace_tel("+" + elem_viber[4])
                         tel10 = tel10.replace("+7", "8")  
                         result_list[name].append(links2)
                         result_list[tel1].append(tel10)
@@ -334,25 +307,25 @@ def main():
         telephone = list_links_tel(prolog_new["href4"][i], "div", "class", "cb-inner", "cb-name", "cb-data")
         print("prolog_new[href4][", i, "]: ", prolog_new["href4"][i])
         for j in range(len(telephone["name"])):
-            title1 = link_replace(prolog_new["title1"][i])
-            href1 = link_replace(prolog_new["href1"][i])
+            title1 = text_replace.link_replace(prolog_new["title1"][i])
+            href1 = text_replace.link_replace(prolog_new["href1"][i])
             telephone_new["title1"].append(title1)
             telephone_new["href1"].append(href1)
-            title2 = link_replace(prolog_new["title2"][i])
-            href2 = link_replace(prolog_new["href2"][i])
+            title2 = text_replace.link_replace(prolog_new["title2"][i])
+            href2 = text_replace.link_replace(prolog_new["href2"][i])
             telephone_new["title2"].append(title2)
             telephone_new["href2"].append(href2)
-            title3 = link_replace(prolog_new["title3"][i])
-            href3 = link_replace(prolog_new["href3"][i])
+            title3 = text_replace.link_replace(prolog_new["title3"][i])
+            href3 = text_replace.link_replace(prolog_new["href3"][i])
             telephone_new["title3"].append(title3)
             telephone_new["href3"].append(href3)
-            title4 = link_replace(prolog_new["title4"][i])
-            href4 = link_replace(prolog_new["href4"][i])
+            title4 = text_replace.link_replace(prolog_new["title4"][i])
+            href4 = text_replace.link_replace(prolog_new["href4"][i])
             telephone_new["title4"].append(title4)
             telephone_new["href4"].append(href4)
-            name5 = link_replace(telephone["name"][j])
-            tel51 = link_replace_tel(telephone["tel1"][j])
-            tel52 = link_replace_tel(telephone["tel2"][j])
+            name5 = text_replace.link_replace(telephone["name"][j])
+            tel51 = text_replace.link_replace_tel(telephone["tel1"][j])
+            tel52 = text_replace.link_replace_tel(telephone["tel2"][j])
             telephone_new["name"].append(name5)
             telephone_new["tel1"].append(tel51)
             telephone_new["tel2"].append(tel52)

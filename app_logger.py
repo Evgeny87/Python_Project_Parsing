@@ -25,3 +25,7 @@ def get_logger(name):
     logger.addHandler(get_file_handler())
     logger.addHandler(get_stream_handler())
     return logger
+
+
+if __name__ == "__main__":
+    pass

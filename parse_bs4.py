@@ -70,3 +70,6 @@ def url_to_parse(url_site=""):
         logger.error("Poproboval 10 raz otpravit, url: {url_site}".format(url_site=url_site))
     return soup, response.status_code
 
+
+if __name__ == "__main__":
+    pass
