@@ -19,7 +19,7 @@ def url_to_parse(url_site=""):
         ua = us_ag.strip()
         headers = {'Content-Type': 'text/html', 'accept': '*/*', 'user-agent': ua}
         response = requests.get(url_site, headers=headers, timeout=None)
-        print(response.encoding)
+        # print(response.encoding)
         # response.encoding = 'utf-8'
         # response.content.decode('utf-8')
         try:
@@ -63,6 +63,7 @@ def url_to_parse(url_site=""):
             logger.error("Ошибка скачивания url: {url_site}".format(url_site=url_site))
         else:
             soup = BeautifulSoup(response.text, "html.parser")
+            # soup = BeautifulSoup(response.content, "html.parser")
             # logger.info('Vse horosho soup gotov')
             break
         print("Oshibka: ", i+1)
