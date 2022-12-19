@@ -7,6 +7,7 @@ import csv_rw
 # import package1
 import parse_bs4
 import text_replace
+import vremy
 
 
 logger = app_logger.get_logger(__name__)
@@ -164,32 +165,6 @@ def dict_new(k):
     return city
 
 
-def convert_to_preferred_format(sec):
-    day = sec // 86400
-    sec %= 86400
-    hour = sec // 3600
-    sec %= 3600
-    min = sec // 60
-    sec %= 60
-    sec1 = sec // 1
-    dol_sec = sec % 1
-    sec = sec1
-    # print("seconds value in day: ", day)
-    # print("seconds value in hours: ", hour)
-    # print("seconds value in minutes: ", min)
-    # print("seconds value in seconds: ", sec)
-    # print("seconds value in dol_seconds: ", dol_sec)
-    return "%01d day, %02d:%02d:%02d, %1.8f" % (day, hour, min, sec, dol_sec)
-
-
-def vremy_now(start):
-    now = time.time()
-    raznicha = now - start
-    vremia = convert_to_preferred_format(raznicha)
-    print(vremia)
-    return vremia
-
-
 def main():
     start = time.time()
     # logger.info("Программа стартует")
@@ -203,14 +178,14 @@ def main():
     data = [item_1, item_2]
     export_data = zip_longest(*data, fillvalue="")
     csv_rw.writer_csv(export_data, "dict0001")
-    logger.warning('Vse horosho, shag 1, zakonchilsia: {vremy_now}'.format(vremy_now=vremy_now(start)))
+    logger.warning('Vse horosho, shag 1, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     city_new = dict_new(2)
     len_region_href1 = len(region1["href1"])
     for i in range(len_region_href1):
         a = i + 1
         len1 = len_region_href1 + 1
         print("i:", a, " iz ", len1, "   ", a / len1 * 100, "prochentov, shag 2 iz 5")
-        vremy_now(start)
+        vremy.vremy_now(start)
         city = list_links(region1["href1"][i], "a", "class", "region_link", 2, region1["title1"][i])
         for j in range(len(city["href2"])):
             title1 = region1["title1"][i]
@@ -228,14 +203,14 @@ def main():
         data = [item_1, item_2, item_3, item_4]
         export_data = zip_longest(*data, fillvalue="")
         csv_rw.writer_csv(export_data, "dict0002")
-    logger.warning('Vse horosho, shag 2, zakonchilsia: {vremy_now}'.format(vremy_now=vremy_now(start)))
+    logger.warning('Vse horosho, shag 2, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     spec_new = dict_new(3)
     len_citynew_href2 = len(city_new["href2"])
     for i in range(len_citynew_href2):
         b = i + 1
         len2 = len_citynew_href2 + 1
         print("i:", b, " iz ", len2, "   ", b / len2 * 100, "prochentov, shag 3 iz 5")
-        vremy_now(start)
+        vremy.vremy_now(start)
         spec = list_links(city_new["href2"][i], "div", "class", "show_group", 3, city_new["title2"][i])
         for j in range(len(spec["href3"])):
             title1 = city_new["title1"][i]
@@ -259,14 +234,14 @@ def main():
         data = [item_1, item_2, item_3, item_4, item_5, item_6]
         export_data = zip_longest(*data, fillvalue="")
         csv_rw.writer_csv(export_data, "dict0003")
-    logger.warning('Vse horosho, shag 3, zakonchilsia: {vremy_now}'.format(vremy_now=vremy_now(start)))
+    logger.warning('Vse horosho, shag 3, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     prolog_new = dict_new(4)
     len_specnew_href3 = len(spec_new["href3"])
     for i in range(len_specnew_href3):
         c = i + 1
         len3 = len_specnew_href3 + 1
         print("i:", c, " iz ", len3, "   ", c / len3 * 100, "prochentov, shag 4 iz 5")
-        vremy_now(start)
+        vremy.vremy_now(start)
         prolog = list_links(spec_new["href3"][i], "ul", "class", "pagination pages-pagination inline-block", 4, spec_new["title3"][i])
         for j in range(len(prolog["href4"])):
             title1 = spec_new["title1"][i]
@@ -296,14 +271,14 @@ def main():
         data = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8]
         export_data = zip_longest(*data, fillvalue="")
         csv_rw.writer_csv(export_data, "dict0004")
-    logger.warning('Vse horosho, shag 4, zakonchilsia: {vremy_now}'.format(vremy_now=vremy_now(start)))
+    logger.warning('Vse horosho, shag 4, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     telephone_new = dict_new(5)
     len_prolog_href4 = len(prolog_new["href4"])
     for i in range(len_prolog_href4):
         c = i + 1
         len4 = len_prolog_href4 + 1
         print("i:", c, " iz ", len4, "   ", c / len4 * 100, "prochentov, shag 5 iz 5")
-        vremy_now(start)
+        vremy.vremy_now(start)
         telephone = list_links_tel(prolog_new["href4"][i], "div", "class", "cb-inner", "cb-name", "cb-data")
         print("prolog_new[href4][", i, "]: ", prolog_new["href4"][i])
         for j in range(len(telephone["name"])):
@@ -343,7 +318,7 @@ def main():
         data = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8, item_9, item_10, item_11]
         export_data = zip_longest(*data, fillvalue="")
         csv_rw.writer_csv(export_data, "dict0005")
-    logger.warning('Vse horosho, shag 5, zakonchilsia: {vremy_now}'.format(vremy_now=vremy_now(start)))
+    logger.warning('Vse horosho, shag 5, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     # logger.info("Программа завершила работу")
 
 
