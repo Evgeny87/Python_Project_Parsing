@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "parser3"
+version = "0.1.0"
+description = ""
+authors = ["evgeny <sun_nik_off@mail.ru>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+beautifulsoup4 = "^4.11.1"
+requests = "^2.28.1"
+fake-useragent = "^1.1.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
