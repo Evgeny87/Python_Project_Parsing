@@ -1,11 +1,14 @@
 import csv
 import app_logger
 
+import dict_new
+
+
 logger = app_logger.get_logger(__name__)
 
 
 def reader_csv(file_name="", lvl=0, encoding_user_file=""):
-    dict_csv_new = dict_new(lvl)
+    dict_csv_new = dict_new.dict_new(lvl)
     try:
         file_name = file_name + ".csv"
         # Чтение из файла файл
@@ -36,29 +39,6 @@ def reader_csv(file_name="", lvl=0, encoding_user_file=""):
         print("Ошибка при работе с файлом:", e)
         logger.error("Ошибка при работе с файлом {file_name}: {e}".format(e=e, file_name=file_name))
     return dict_csv_new
-
-
-def dict_new(k):
-    k += 1
-    city = dict()
-    for i in range(1, k):
-        title_i = "title" + str(i)
-        href_i = "href" + str(i)
-        key, value = title_i, []
-        city[key] = value
-        key, value = href_i, []
-        city[key] = value
-    if k == 6:
-        name = "name"
-        key, value = name, []
-        city[key] = value
-        tel1 = "tel1"
-        key, value = tel1, []
-        city[key] = value
-        tel2 = "tel2"
-        key, value = tel2, []
-        city[key] = value
-    return city
 
 
 def writer_csv(export_data, file_name=""):
