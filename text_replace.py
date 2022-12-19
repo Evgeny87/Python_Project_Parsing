@@ -45,7 +45,7 @@ def link_replase_tel_number2(tel_str=""):
 
 
 def link_replase_tel_name(tel_name_str=""):
-    x = re.sub(r"[^a-zA-Zа-яА-Я0-9@.\- ]", "", tel_name_str)
+    x = re.sub(r"[^a-zA-Zа-яА-Я0-9@.\-“\"«» ]", "", tel_name_str)
     return (x)
 
 

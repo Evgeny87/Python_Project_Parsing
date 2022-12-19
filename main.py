@@ -89,7 +89,8 @@ def main():
         len3 = len_specnew_href3 + 1
         print("i:", c, " iz ", len3, "   ", c / len3 * 100, "prochentov, shag 4 iz 5")
         vremy.vremy_now(start)
-        prolog = list_parse.list_links(spec_new["href3"][i], "ul", "class", "pagination pages-pagination inline-block", 4, spec_new["title3"][i])
+        prolog = list_parse.list_links(spec_new["href3"][i], "ul", "class", "pagination pages-pagination inline-block",
+                                       4, spec_new["title3"][i])
         for j in range(len(prolog["href4"])):
             title1 = spec_new["title1"][i]
             href1 = spec_new["href1"][i]
