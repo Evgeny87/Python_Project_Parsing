@@ -4,6 +4,7 @@ from itertools import zip_longest
 import app_logger
 import csv_rw
 import dict_new
+import list_parse
 # import package1
 import text_replace
 import vremy
@@ -18,7 +19,7 @@ def main():
     # package1.process(msg="сообщение")
     # logger.warning("Это должно появиться как в консоли, так и в файле журнала")
     url = "https://perevozka24.ru/arenda-spetstehniki"
-    region1 = text_replace.list_links(url, "a", "class", "region_link_href", 1)
+    region1 = list_parse.list_links(url, "a", "class", "region_link_href", 1)
     item_1 = region1["title1"]
     item_2 = region1["href1"]
     data = [item_1, item_2]
@@ -32,7 +33,7 @@ def main():
         len1 = len_region_href1 + 1
         print("i:", a, " iz ", len1, "   ", a / len1 * 100, "prochentov, shag 2 iz 5")
         vremy.vremy_now(start)
-        city = text_replace.list_links(region1["href1"][i], "a", "class", "region_link", 2, region1["title1"][i])
+        city = list_parse.list_links(region1["href1"][i], "a", "class", "region_link", 2, region1["title1"][i])
         for j in range(len(city["href2"])):
             title1 = region1["title1"][i]
             href1 = region1["href1"][i]
@@ -57,7 +58,7 @@ def main():
         len2 = len_citynew_href2 + 1
         print("i:", b, " iz ", len2, "   ", b / len2 * 100, "prochentov, shag 3 iz 5")
         vremy.vremy_now(start)
-        spec = text_replace.list_links(city_new["href2"][i], "div", "class", "show_group", 3, city_new["title2"][i])
+        spec = list_parse.list_links(city_new["href2"][i], "div", "class", "show_group", 3, city_new["title2"][i])
         for j in range(len(spec["href3"])):
             title1 = city_new["title1"][i]
             href1 = city_new["href1"][i]
@@ -88,7 +89,7 @@ def main():
         len3 = len_specnew_href3 + 1
         print("i:", c, " iz ", len3, "   ", c / len3 * 100, "prochentov, shag 4 iz 5")
         vremy.vremy_now(start)
-        prolog = text_replace.list_links(spec_new["href3"][i], "ul", "class", "pagination pages-pagination inline-block", 4, spec_new["title3"][i])
+        prolog = list_parse.list_links(spec_new["href3"][i], "ul", "class", "pagination pages-pagination inline-block", 4, spec_new["title3"][i])
         for j in range(len(prolog["href4"])):
             title1 = spec_new["title1"][i]
             href1 = spec_new["href1"][i]
@@ -125,7 +126,7 @@ def main():
         len4 = len_prolog_href4 + 1
         print("i:", c, " iz ", len4, "   ", c / len4 * 100, "prochentov, shag 5 iz 5")
         vremy.vremy_now(start)
-        telephone = text_replace.list_links_tel(prolog_new["href4"][i], "div", "class", "cb-inner", "cb-name", "cb-data")
+        telephone = list_parse.list_links_tel(prolog_new["href4"][i], "div", "class", "cb-inner", "cb-name", "cb-data")
         print("prolog_new[href4][", i, "]: ", prolog_new["href4"][i])
         for j in range(len(telephone["name"])):
             title1 = text_replace.link_replace(prolog_new["title1"][i])
