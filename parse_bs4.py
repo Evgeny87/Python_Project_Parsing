@@ -9,7 +9,9 @@ logger = app_logger.get_logger(__name__)
 
 
 def url_to_parse(url_site=""):
-    for i in range(100):
+    i = 0
+    while True:
+    # for i in range(100):
         ua = UserAgent(verify_ssl=False)
         us_ag = ua.random
         ua = us_ag.strip()
@@ -65,9 +67,10 @@ def url_to_parse(url_site=""):
         print("Oshibka: ", i+1)
         logger.error("Oshibka: {i}, url: {url_site}".format(i=i+1, url_site=url_site))
         time.sleep(i+1)
-    else:
-        print("Poproboval 10 raz otpravit")
-        logger.error("Poproboval 10 raz otpravit, url: {url_site}".format(url_site=url_site))
+        i += 1
+    # else:
+    #     print("Poproboval 10 raz otpravit")
+    #     logger.error("Poproboval 10 raz otpravit, url: {url_site}".format(url_site=url_site))
     return soup, response.status_code
 
 
