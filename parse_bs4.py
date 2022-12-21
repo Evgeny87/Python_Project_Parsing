@@ -14,11 +14,11 @@ def url_to_parse(url_site=""):
         us_ag = ua.random
         ua = us_ag.strip()
         headers = {'Content-Type': 'text/html', 'accept': '*/*', 'user-agent': ua}
-        response = requests.get(url_site, headers=headers, timeout=None)
-        # print(response.encoding)
-        # response.encoding = 'utf-8'
-        # response.content.decode('utf-8')
         try:
+            response = requests.get(url_site, headers=headers, timeout=None)
+            # print(response.encoding)
+            # response.encoding = 'utf-8'
+            # response.content.decode('utf-8')
             response.raise_for_status()
         except requests.exceptions.Timeout as errt:
             print("Timeout Error:", errt)
