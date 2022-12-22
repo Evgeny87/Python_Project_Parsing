@@ -32,6 +32,9 @@ def reader_csv(file_name="", lvl=0, encoding_user_file=""):
                     dict_csv_new["href3"].append(row[5])
                     dict_csv_new["title4"].append(row[6])
                     dict_csv_new["href4"].append(row[7])
+                    dict_csv_new["name"].append(row[8])
+                    dict_csv_new["tel1"].append(row[9])
+                    dict_csv_new["tel2"].append(row[10])
                 count += 1
             print(f'Всего в файле {count} строк.')
             logger.warning('Всего в файле {count} строк.'.format(count=count))
