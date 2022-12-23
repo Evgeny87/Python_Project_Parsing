@@ -34,7 +34,8 @@ def main():
         print("i:", a, " iz ", len1, "   ", a / len1 * 100, "prochentov, shag 2 iz 5")
         vremy.vremy_now(start)
         city = list_parse.list_links(region1["href1"][i], "a", "class", "region_link", 2, region1["title1"][i])
-        for j in range(len(city["href2"])):
+        len_city_href2 = len(city["href2"])
+        for j in range(len_city_href2):
             title1 = region1["title1"][i]
             href1 = region1["href1"][i]
             city_new["title1"].append(title1)
@@ -59,7 +60,8 @@ def main():
         print("i:", b, " iz ", len2, "   ", b / len2 * 100, "prochentov, shag 3 iz 5")
         vremy.vremy_now(start)
         spec = list_parse.list_links(city_new["href2"][i], "div", "class", "show_group", 3, city_new["title2"][i])
-        for j in range(len(spec["href3"])):
+        len_spec_href3 = len(spec["href3"])
+        for j in range(len_spec_href3):
             title1 = city_new["title1"][i]
             href1 = city_new["href1"][i]
             spec_new["title1"].append(title1)
@@ -91,7 +93,8 @@ def main():
         vremy.vremy_now(start)
         prolog = list_parse.list_links(spec_new["href3"][i], "ul", "class", "pagination pages-pagination inline-block",
                                        4, spec_new["title3"][i])
-        for j in range(len(prolog["href4"])):
+        len_prolog_href4 = len(prolog["href4"])
+        for j in range(len_prolog_href4):
             title1 = spec_new["title1"][i]
             href1 = spec_new["href1"][i]
             prolog_new["title1"].append(title1)
@@ -129,7 +132,8 @@ def main():
         vremy.vremy_now(start)
         telephone = list_parse.list_links_tel(prolog_new["href4"][i], "div", "class", "cb-inner", "cb-name", "cb-data")
         print("prolog_new[href4][", i, "]: ", prolog_new["href4"][i])
-        for j in range(len(telephone["name"])):
+        len_telephone_name = len(telephone["name"])
+        for j in range(len_telephone_name):
             title1 = text_replace.link_replace(prolog_new["title1"][i])
             href1 = text_replace.link_replace(prolog_new["href1"][i])
             telephone_new["title1"].append(title1)
