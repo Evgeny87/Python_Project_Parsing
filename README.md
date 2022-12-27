@@ -36,12 +36,18 @@ pip install --upgrade pip
 
 ===================================================
 
+Не работает
+
 pip install poetry==1.3.1
 
 poetry install --only main
 
 ===================================================
 
-**) запуск
+8) Устанавливаем зависимости
+
+pip install -r requirements.txt
+
+9) запускаем
 
 python main.py или python3 main.py
