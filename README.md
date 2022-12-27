@@ -13,4 +13,4 @@ python -V или python3 -V
 
 poetry install
 
-python main.py или python3 main_new.py 
+python main.py или python3 main.py 
