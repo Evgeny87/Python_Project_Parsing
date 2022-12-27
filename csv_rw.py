@@ -1,14 +1,11 @@
 import csv
 import app_logger
 
-import dict_new
-
-
 logger = app_logger.get_logger(__name__)
 
 
 def reader_csv(file_name="", lvl=0, encoding_user_file=""):
-    dict_csv_new = dict_new.dict_new(lvl)
+    dict_csv_new = dict_new(lvl)
     try:
         file_name = file_name + ".csv"
         # Чтение из файла файл
@@ -23,18 +20,19 @@ def reader_csv(file_name="", lvl=0, encoding_user_file=""):
                     # Пропускаем вывод строки, содержащей заголовки для столбцов
                     pass
                 else:
-                    # Вывод строк
-                    dict_csv_new["title1"].append(row[0])
-                    dict_csv_new["href1"].append(row[1])
-                    dict_csv_new["title2"].append(row[2])
-                    dict_csv_new["href2"].append(row[3])
-                    dict_csv_new["title3"].append(row[4])
-                    dict_csv_new["href3"].append(row[5])
-                    dict_csv_new["title4"].append(row[6])
-                    dict_csv_new["href4"].append(row[7])
-                    dict_csv_new["name"].append(row[8])
-                    dict_csv_new["tel1"].append(row[9])
-                    dict_csv_new["tel2"].append(row[10])
+                    try:
+                        # Вывод строк
+                        dict_csv_new["title1"].append(row[0])
+                        dict_csv_new["href1"].append(row[1])
+                        dict_csv_new["title2"].append(row[2])
+                        dict_csv_new["href2"].append(row[3])
+                        dict_csv_new["title3"].append(row[4])
+                        dict_csv_new["href3"].append(row[5])
+                        dict_csv_new["title4"].append(row[6])
+                        dict_csv_new["href4"].append(row[7])
+                    except Exception as e:
+                        print("Ошибка при работе чтение строки из файла:", e)
+                        logger.error("Ошибка при работе чтение строки из файла {file_name}: {e}".format(e=e, file_name=file_name))
                 count += 1
             print(f'Всего в файле {count} строк.')
             logger.warning('Всего в файле {count} строк.'.format(count=count))
@@ -42,6 +40,29 @@ def reader_csv(file_name="", lvl=0, encoding_user_file=""):
         print("Ошибка при работе с файлом:", e)
         logger.error("Ошибка при работе с файлом {file_name}: {e}".format(e=e, file_name=file_name))
     return dict_csv_new
+
+
+def dict_new(k):
+    k += 1
+    city = dict()
+    for i in range(1, k):
+        title_i = "title" + str(i)
+        href_i = "href" + str(i)
+        key, value = title_i, []
+        city[key] = value
+        key, value = href_i, []
+        city[key] = value
+    if k == 6:
+        name = "name"
+        key, value = name, []
+        city[key] = value
+        tel1 = "tel1"
+        key, value = tel1, []
+        city[key] = value
+        tel2 = "tel2"
+        key, value = tel2, []
+        city[key] = value
+    return city
 
 
 def writer_csv(export_data, file_name=""):
