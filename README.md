@@ -40,8 +40,6 @@ pip install poetry
 
 poetry install
 
-poetry update
-
 ===================================================
 
 **) запуск
