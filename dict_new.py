@@ -19,7 +19,3 @@ def dict_new(k):
         key, value = tel2, []
         city[key] = value
     return city
-
-
-if __name__ == "__main__":
-    pass
