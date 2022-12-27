@@ -36,9 +36,9 @@ pip install --upgrade pip
 
 ===================================================
 
-pip install poetry
+pip install poetry==1.3.1
 
-poetry install
+poetry install --only main
 
 ===================================================
 
