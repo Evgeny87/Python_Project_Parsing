@@ -26,7 +26,7 @@ cd Python_Project_Parsing
 
 5) Проверяем версию python
 
-python -V или python3 -V
+python3 -V (или python -V)
 
 6) Проверяем версию pip
 
@@ -40,11 +40,7 @@ pip install --upgrade pip
 
 8) Устанавливаем зависимости
 
-poetry update
-
-или
-
-pip install -r requirements.txt
+poetry update (или pip install -r requirements.txt)
 
 ===================================================
 
@@ -54,4 +50,4 @@ poetry show --tree
 
 10) запускаем
 
-python main.py или python3 main.py
+python3 main.py (или python main.py)
