@@ -40,7 +40,7 @@ pip install --upgrade pip
 
 8) Устанавливаем зависимости
 
-poetry install==1.3.1 (или pip install -r requirements.txt)
+poetry install (или pip install -r requirements.txt)
 
 ===================================================
 
