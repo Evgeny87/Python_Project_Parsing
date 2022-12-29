@@ -48,6 +48,10 @@ pip install -r requirements.txt
 
 ===================================================
 
-9) запускаем
+9) Проверяем зависимости
+
+poetry show --tree
+
+10) запускаем
 
 python main.py или python3 main.py
