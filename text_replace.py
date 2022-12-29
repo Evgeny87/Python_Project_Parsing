@@ -22,6 +22,7 @@ def link_replace_tel(link):
         link = link.replace("-", "")
         link = link.replace("(", "")
         link = link.replace(")", "")
+        link = link.replace(",", "")
         link = link.replace("  ", "")
         link = link.replace(" ", "")
         link = link.replace("+7", "8")
