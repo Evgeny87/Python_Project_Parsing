@@ -40,8 +40,6 @@ pip install --upgrade pip
 
 8) Устанавливаем зависимости
 
-pip install poetry==1.3.1
-
 poetry update
 
 или
