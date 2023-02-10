@@ -31,23 +31,23 @@ def link_replace_tel(link):
 
 
 def link_replase_tel_number(tel_str=""):
-    x = re.sub(r"[^0-9]", "", tel_str)
-    x = x.replace(" ", "")
-    return (x)
+    tel_number = re.sub(r"[^0-9]", "", tel_str)
+    tel_number = tel_number.replace(" ", "")
+    return (tel_number)
 
 
 def link_replase_tel_number2(tel_str=""):
-    b = ""
+    tel_number2 = ""
     x = re.findall('[0-9]+', tel_str)
     for i in range(len(x)):
-        b = b + str(x[i])
-    b = b.replace(" ", "")
-    return (b)
+        tel_number2 = tel_number2 + str(x[i])
+    tel_number2 = tel_number2.replace(" ", "")
+    return (tel_number2)
 
 
 def link_replase_tel_name(tel_name_str=""):
-    x = re.sub(r"[^a-zA-Zа-яА-Я0-9@.\-“\"«»()*+/|\\?!,;: ]", "", tel_name_str)
-    return (x)
+    tel_name = re.sub(r"[^a-zA-Zа-яА-Я0-9@.\-“\"«»()*+/|\\?!,;: ]", "", tel_name_str)
+    return (tel_name)
 
 
 if __name__ == "__main__":
