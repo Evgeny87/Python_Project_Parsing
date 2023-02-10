@@ -1,19 +1,21 @@
 [tool.poetry]
-name = "parser3"
+name = "parser"
 version = "0.1.0"
 description = ""
-authors = ["evgeny <sun_nik_off@mail.ru>"]
+authors = ["Sannikov Evgeny <sun_nik_off@mail.ru>"]
 license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-beautifulsoup4 = "^4.11.1"
-requests = "^2.28.1"
+beautifulsoup4 = "^4.11.2"
 fake-useragent = "^1.1.1"
+requests = "^2.28.2"
+pandas = "^1.5.3"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.12.0"
+black = "^23.1.0"
+pylint = "^2.16.1"
 
 [build-system]
 requires = ["poetry-core"]
