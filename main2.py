@@ -159,7 +159,7 @@ def main():
     # newjson = pd.read_json("pandas0004.json", orient='index')
     # print("json: ", newjson)
 
-    print("i:", n, " iz ", len3, "   ", n / len3 * 100, "prochentov, shag 3 iz 5")
+    print("i:", n, " iz ", len3, "   ", n / len3 * 100, "prochentov, shag 4 iz 5")
     n += 1
 
     del spec_df
