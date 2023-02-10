@@ -168,7 +168,65 @@ def main():
     del len3
     logger.warning('Vse horosho, shag 4, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     
+	telephone_new = dict_new.dict_new(5)
+	len4 = len(prolog_df.index)
+	n = 1
+	for i, row in prolog_df.iterrows():
+        vremy.vremy_now(start)
+        telephone = list_parse.list_links_tel(row[7], "div", "class", "cb-inner", "cb-name", "cb-data")
+        if telephone == None:
+            pass
+        else:
+            len_telephone_name = len(telephone["name"])
+            for j in range(len_telephone_name):
+                title1 = text_replace.link_replace(row[0])
+                href1 = text_replace.link_replace(row[1])
+                telephone_new["title1"].append(title1)
+                telephone_new["href1"].append(href1)
+                title2 = text_replace.link_replace(row[2])
+                href2 = text_replace.link_replace(row[3])
+                telephone_new["title2"].append(title2)
+                telephone_new["href2"].append(href2)
+                title3 = text_replace.link_replace(row[4])
+                href3 = text_replace.link_replace(row[5])
+                telephone_new["title3"].append(title3)
+                telephone_new["href3"].append(href3)
+                title4 = text_replace.link_replace(row[6])
+                href4 = text_replace.link_replace(row[7])
+                telephone_new["title4"].append(title4)
+                telephone_new["href4"].append(href4)
+                name5 = text_replace.link_replase_tel_name(text_replace.link_replace(telephone["name"][j]))
+                tel51 = text_replace.link_replase_tel_number(text_replace.link_replace_tel(telephone["tel1"][j]))
+                tel52 = text_replace.link_replace_tel(telephone["tel2"][j])
+                telephone_new["name"].append(name5)
+                telephone_new["tel1"].append(tel51)
+                telephone_new["tel2"].append(tel52)
+
+        telephone_df = pd.DataFrame(telephone_new)
+
+        telephone_df.to_csv("pandas0005.csv", sep=';', encoding='utf-8-sig', index=False)
+        # telephone_df.to_excel("pandas0005.xls")
+        # telephone_df.to_excel("pandas0005.xlsx")
+        telephone_df.to_json("pandas0005.json", orient='index')
+        # telephone_df.to_xml("pandas0005.xml")
+
+        # newcsv = pd.read_csv("pandas0005.csv", sep=';')
+        # print("csv: ", newcsv)
+        # newjson = pd.read_json("pandas0005.json", orient='index')
+        # print("json: ", newjson)
+
+        print("i:", n, " iz ", len4, "   ", n / len4 * 100, "prochentov, shag 5 iz 5")
+        n += 1
+
     del prolog_df
+    del telephone_new
+    del n
+    del len4
+    logger.warning('Vse horosho, shag 5, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+	
+	del telephone_df
+	
+    # logger.info("Программа завершила работу")
 
 
 if __name__ == "__main__":
