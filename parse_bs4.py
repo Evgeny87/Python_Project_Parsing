@@ -3,9 +3,18 @@ from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 import time
 import app_logger
+import random
+import string
 
 
 logger = app_logger.get_logger(__name__)
+
+
+# https://dev-gang.ru/article/kak-sgenerirovat-sluczainuu-stroku-v-python-wwnl77lvl4/
+def generate_alphanum_random_string(length):
+    letters_and_digits = string.ascii_letters + string.digits
+    rand_string = ''.join(random.sample(letters_and_digits, length))
+    return rand_string
 
 
 def url_to_parse(url_site=""):
@@ -15,9 +24,11 @@ def url_to_parse(url_site=""):
         ua = UserAgent(verify_ssl=False)
         us_ag = ua.random
         ua = us_ag.strip()
+        cookies_random = str(generate_alphanum_random_string(31))
         headers = {'Content-Type': 'text/html', 'accept': '*/*', 'user-agent': ua}
+        cookies = {'perevozka24_session': cookies_random}
         try:
-            response = requests.get(url_site, headers=headers, timeout=None)
+            response = requests.get(url_site, headers=headers, timeout=None, cookies=cookies)
             # print(response.encoding)
             # response.encoding = 'utf-8'
             # response.content.decode('utf-8')
