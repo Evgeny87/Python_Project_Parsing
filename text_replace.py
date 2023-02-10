@@ -38,9 +38,9 @@ def link_replase_tel_number(tel_str=""):
 
 def link_replase_tel_number2(tel_str=""):
     tel_number2 = ""
-    x = re.findall('[0-9]+', tel_str)
-    for i in range(len(x)):
-        tel_number2 = tel_number2 + str(x[i])
+    tel = re.findall('[0-9]+', tel_str)
+    for i in range(len(tel)):
+        tel_number2 = tel_number2 + str(tel[i])
     tel_number2 = tel_number2.replace(" ", "")
     return (tel_number2)
 
