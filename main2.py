@@ -41,6 +41,7 @@ def main():
     len1 = len(df.index)
     n = 1
     for i, row in df.iterrows():
+        vremy.vremy_now(start)
         city = list_parse.list_links(row[1], "a", "class", "region_link", 2, row[0])
         len_city_href2 = len(city["href2"])
         for j in range(len_city_href2):
@@ -80,6 +81,7 @@ def main():
     len2 = len(city_df.index)
     n = 1
     for i, row in city_df.iterrows():
+        vremy.vremy_now(start)
         spec = list_parse.list_links(row[3], "div", "class", "show_group", 3, row[2])
         len_spec_href3 = len(spec["href3"])
         for j in range(len_spec_href3):
@@ -99,10 +101,10 @@ def main():
         spec_df = pd.DataFrame(spec_new)
 
         spec_df.to_csv("pandas0003.csv", sep=';', encoding='utf-8-sig', index=False)
-        # city_df.to_excel("pandas0003.xls")
-        # city_df.to_excel("pandas0003.xlsx")
+        # spec_df.to_excel("pandas0003.xls")
+        # spec_df.to_excel("pandas0003.xlsx")
         spec_df.to_json("pandas0003.json", orient='index')
-        # city_df.to_xml("pandas0003.xml")
+        # spec_df.to_xml("pandas0003.xml")
 
         # newcsv = pd.read_csv("pandas0003.csv", sep=';')
         # print("csv: ", newcsv)
@@ -112,13 +114,61 @@ def main():
         print("i:", n, " iz ", len2, "   ", n / len2 * 100, "prochentov, shag 3 iz 5")
         n += 1
 
-    del df
+    del city_df
     del spec_new
     del n
     del len2
     logger.warning('Vse horosho, shag 3, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
+    prolog_new = dict_new.dict_new(4)
+    len3 = len(spec_df.index)
+    n = 1
+    for i, row in spec_df.iterrows():
+        vremy.vremy_now(start)
+        prolog = list_parse.list_links(row[5], "ul", "class", "pagination pages-pagination inline-block",
+                                       4, row[4])
+        len_prolog_href4 = len(prolog["href4"])
+        for j in range(len_prolog_href4):
+            title1 = row[0]
+        href1 = row[1]
+        prolog_new["title1"].append(title1)
+        prolog_new["href1"].append(href1)
+        title2 = row[2]
+        href2 = row[3]
+        prolog_new["title2"].append(title2)
+        prolog_new["href2"].append(href2)
+        title3 = row[4]
+        href3 = row[5]
+        prolog_new["title3"].append(title3)
+        prolog_new["href3"].append(href3)
+        title4 = prolog["title4"][j]
+        href4 = prolog["href4"][j]
+        prolog_new["title4"].append(title4)
+        prolog_new["href4"].append(href4)
+
+    prolog_df = pd.DataFrame(prolog_new)
+
+    prolog_df.to_csv("pandas0004.csv", sep=';', encoding='utf-8-sig', index=False)
+    # prolog_df.to_excel("pandas0004.xls")
+    # prolog_df.to_excel("pandas0004.xlsx")
+    prolog_df.to_json("pandas0004.json", orient='index')
+    # prolog_df.to_xml("pandas0004.xml")
+
+    # newcsv = pd.read_csv("pandas0004.csv", sep=';')
+    # print("csv: ", newcsv)
+    # newjson = pd.read_json("pandas0004.json", orient='index')
+    # print("json: ", newjson)
+
+    print("i:", n, " iz ", len3, "   ", n / len3 * 100, "prochentov, shag 3 iz 5")
+    n += 1
+
     del spec_df
+    del prolog_new
+    del n
+    del len3
+    logger.warning('Vse horosho, shag 4, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    
+    del prolog_df
 
 
 if __name__ == "__main__":
