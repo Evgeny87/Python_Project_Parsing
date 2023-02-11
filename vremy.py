@@ -6,17 +6,17 @@ def convert_to_preferred_format(sec):
     sec %= 86400
     hour = sec // 3600
     sec %= 3600
-    min = sec // 60
+    minut = sec // 60
     sec %= 60
     sec1 = sec // 1
     dol_sec = sec % 1
     sec = sec1
     # print("seconds value in day: ", day)
     # print("seconds value in hours: ", hour)
-    # print("seconds value in minutes: ", min)
+    # print("seconds value in minutes: ", minut)
     # print("seconds value in seconds: ", sec)
     # print("seconds value in dol_seconds: ", dol_sec)
-    return "%01d day, %02d:%02d:%02d, %1.8f" % (day, hour, min, sec, dol_sec)
+    return "%01d day, %02d:%02d:%02d, %1.8f" % (day, hour, minut, sec, dol_sec)
 
 
 def vremy_now(start):
