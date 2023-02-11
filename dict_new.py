@@ -1,6 +1,6 @@
 def dict_new(k):
     k += 1
-    city = dict()
+    city = {}
     for i in range(1, k):
         title_i = "title" + str(i)
         href_i = "href" + str(i)

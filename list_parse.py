@@ -81,7 +81,7 @@ def list_links_tel(url_site="", teg="", selector="", name1="", name2="", name3="
     else:
         kolzapros += 1
         links1 = url_site.find_all(teg, {selector: name1})
-        result_list = dict()
+        result_list = {}
         name = "name"
         key, value = name, []
         result_list[key] = value
