@@ -52,9 +52,9 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0, kolzapros=0, S
                 abc = link
             if abc is not None:
                 if lvl == 4:
-                    for ab in abc:
-                        result_list[href].append(ab.get("href"))
-                        link = text_replace.link_replace(ab.text)
+                    for jhkl in abc:
+                        result_list[href].append(jhkl.get("href"))
+                        link = text_replace.link_replace(jhkl.text)
                         result_list[title].append(link)
                         k += 1
                     for i in range(k + 1, 100):
@@ -63,8 +63,8 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0, kolzapros=0, S
                         if code != 200:
                             break
 
-                        result_list[href].append(ab.get("href"))
-                        link = text_replace.link_replace(ab.text)
+                        result_list[href].append(jhkl.get("href"))
+                        link = text_replace.link_replace(jhkl.text)
                         result_list[title].append(link)
                 else:
                     result_list[href].append('https://perevozka24.ru' + abc.get("href"))
