@@ -224,11 +224,11 @@ def main():
     del n
     del len4
     logger.warning('Vse horosho, shag 5, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
-	
+
     del telephone_df
     del STEP
     del kolzapros
-	
+
     # logger.info("Программа завершила работу")
 
 
