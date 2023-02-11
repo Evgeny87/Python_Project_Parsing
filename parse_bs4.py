@@ -17,14 +17,20 @@ def generate_alphanum_random_string(length):
     return rand_string
 
 
-def url_to_parse(url_site=""):
+def random_ua_and_cookies(kol_zapros=0, STEP=0):
+    # if kol_zapros == 0 or kol_zapros % STEP == 0:
+    ua = UserAgent(verify_ssl=False)
+    us_ag = ua.random
+    ua = us_ag.strip()
+    cookies_random = str(generate_alphanum_random_string(31))
+    return ua, cookies_random
+
+
+def url_to_parse(url_site="", kol_zapros=0, STEP=0):
     i = 0
     while True:
     # for i in range(100):
-        ua = UserAgent(verify_ssl=False)
-        us_ag = ua.random
-        ua = us_ag.strip()
-        cookies_random = str(generate_alphanum_random_string(31))
+        ua, cookies_random = random_ua_and_cookies(kol_zapros, STEP)
         headers = {'Content-Type': 'text/html', 'accept': '*/*', 'user-agent': ua}
         cookies = {'perevozka24_session': cookies_random}
         try:
