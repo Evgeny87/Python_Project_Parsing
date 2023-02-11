@@ -4,14 +4,15 @@ import parse_bs4
 import text_replace
 
 
-def list_links(url_site="", teg1="", selector="", name="", lvl=0, title_ishod=""):
+def list_links(url_site="", teg1="", selector="", name="", lvl=0, kolzapros=0, STEP=0, title_ishod=""):
     url_ishod = url_site
-    soup, code = parse_bs4.url_to_parse(url_site)
+    soup, code = parse_bs4.url_to_parse(url_site, kolzapros, STEP)
     url_site = soup
     k = 1
     if code != 200:
         pass
     else:
+        kolzapros += 1
         links = url_site.find_all(teg1, {selector: name})
         lvl_max = lvl + 1
         result_list = dict()
@@ -72,12 +73,13 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0, title_ishod=""
         return result_list
 
 
-def list_links_tel(url_site="", teg="", selector="", name1="", name2="", name3=""):
-    soup, code = parse_bs4.url_to_parse(url_site)
+def list_links_tel(url_site="", teg="", selector="", name1="", name2="", name3="", kolzapros=0, STEP=0):
+    soup, code = parse_bs4.url_to_parse(url_site, kolzapros, STEP)
     url_site = soup
     if code != 200:
         pass
     else:
+        kolzapros += 1
         links1 = url_site.find_all(teg, {selector: name1})
         result_list = dict()
         name = "name"
