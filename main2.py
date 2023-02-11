@@ -18,7 +18,9 @@ def main():
     # package1.process(msg="сообщение")
     # logger.warning("Это должно появиться как в консоли, так и в файле журнала")
     url = "https://perevozka24.ru/arenda-spetstehniki"
-    region1 = list_parse.list_links(url, "a", "class", "region_link_href", 1)
+    STEP = 10
+    kolzapros = 0
+    region1 = list_parse.list_links(url, "a", "class", "region_link_href", 1, kolzapros, STEP)
     del url
 
     df = pd.DataFrame(region1)
@@ -42,7 +44,7 @@ def main():
     n = 1
     for i, row in df.iterrows():
         vremy.vremy_now(start)
-        city = list_parse.list_links(row[1], "a", "class", "region_link", 2, row[0])
+        city = list_parse.list_links(row[1], "a", "class", "region_link", 2, kolzapros, STEP, row[0])
         len_city_href2 = len(city["href2"])
         for j in range(len_city_href2):
             title1 = row[0]
@@ -82,7 +84,7 @@ def main():
     n = 1
     for i, row in city_df.iterrows():
         vremy.vremy_now(start)
-        spec = list_parse.list_links(row[3], "div", "class", "show_group", 3, row[2])
+        spec = list_parse.list_links(row[3], "div", "class", "show_group", 3, kolzapros, STEP, row[2])
         len_spec_href3 = len(spec["href3"])
         for j in range(len_spec_href3):
             title1 = row[0]
@@ -126,7 +128,7 @@ def main():
     for i, row in spec_df.iterrows():
         vremy.vremy_now(start)
         prolog = list_parse.list_links(row[5], "ul", "class", "pagination pages-pagination inline-block",
-                                       4, row[4])
+                                       4, kolzapros, STEP, row[4])
         len_prolog_href4 = len(prolog["href4"])
         for j in range(len_prolog_href4):
             title1 = row[0]
@@ -173,7 +175,7 @@ def main():
 	n = 1
 	for i, row in prolog_df.iterrows():
         vremy.vremy_now(start)
-        telephone = list_parse.list_links_tel(row[7], "div", "class", "cb-inner", "cb-name", "cb-data")
+        telephone = list_parse.list_links_tel(row[7], "div", "class", "cb-inner", "cb-name", "cb-data", kolzapros, STEP)
         if telephone == None:
             pass
         else:
@@ -224,7 +226,9 @@ def main():
     del len4
     logger.warning('Vse horosho, shag 5, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 	
-	del telephone_df
+    del telephone_df
+    del STEP
+    del kolzapros
 	
     # logger.info("Программа завершила работу")
 
