@@ -11,66 +11,66 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0, kolzapros=0, S
     k = 1
     if code != 200:
         pass
+
+    kolzapros += 1
+    links = url_site.find_all(teg1, {selector: name})
+    lvl_max = lvl + 1
+    result_list = {}
+    for i in range(1, lvl_max):
+        title_i = "title" + str(i)
+        href_i = "href" + str(i)
+        key, value = title_i, []
+        result_list[key] = value
+        key, value = href_i, []
+        result_list[key] = value
+    title = 'title' + str(lvl)
+    href = 'href' + str(lvl)
+    if links == []:
+        if lvl == 4:
+            result_list[href].append(url_ishod)
+            result_list[title].append("1")
+            for i in range(2, 100):
+                url_site_code = str(url_ishod + "/" + str(i))
+                soup, code = parse_bs4.url_to_parse(url_site_code)
+                if code != 200:
+                    break
+                else:
+                    result_list[href].append(url_site_code)
+                    result_list[title].append(i)
+        else:
+            result_list[title].append(title_ishod)
+            result_list[href].append(url_ishod)
     else:
-        kolzapros += 1
-        links = url_site.find_all(teg1, {selector: name})
-        lvl_max = lvl + 1
-        result_list = {}
-        for i in range(1, lvl_max):
-            title_i = "title" + str(i)
-            href_i = "href" + str(i)
-            key, value = title_i, []
-            result_list[key] = value
-            key, value = href_i, []
-            result_list[key] = value
-        title = 'title' + str(lvl)
-        href = 'href' + str(lvl)
-        if links == []:
-            if lvl == 4:
+        for link in links:
+            if lvl == 3:
+                abc = link.find("a")
+            elif lvl == 4:
+                abc = link.find_all("a")
                 result_list[href].append(url_ishod)
                 result_list[title].append("1")
-                for i in range(2, 100):
-                    url_site_code = str(url_ishod + "/" + str(i))
-                    soup, code = parse_bs4.url_to_parse(url_site_code)
-                    if code != 200:
-                        break
-                    else:
-                        result_list[href].append(url_site_code)
-                        result_list[title].append(i)
             else:
-                result_list[title].append(title_ishod)
-                result_list[href].append(url_ishod)
-        else:
-            for link in links:
-                if lvl == 3:
-                    abc = link.find("a")
-                elif lvl == 4:
-                    abc = link.find_all("a")
-                    result_list[href].append(url_ishod)
-                    result_list[title].append("1")
-                else:
-                    abc = link
-                if abc is not None:
-                    if lvl == 4:
-                        for ab in abc:
-                            result_list[href].append(ab.get("href"))
-                            link = text_replace.link_replace(ab.text)
-                            result_list[title].append(link)
-                            k += 1
-                        for i in range(k+1, 100):
-                            url_site_code = str(url_ishod + "/" + str(i))
-                            soup, code = parse_bs4.url_to_parse(url_site_code)
-                            if code != 200:
-                                break
-
-                            result_list[href].append(ab.get("href"))
-                            link = text_replace.link_replace(ab.text)
-                            result_list[title].append(link)
-                    else:
-                        result_list[href].append('https://perevozka24.ru' + abc.get("href"))
-                        link = text_replace.link_replace(abc.text)
+                abc = link
+            if abc is not None:
+                if lvl == 4:
+                    for ab in abc:
+                        result_list[href].append(ab.get("href"))
+                        link = text_replace.link_replace(ab.text)
                         result_list[title].append(link)
-        return result_list
+                        k += 1
+                    for i in range(k + 1, 100):
+                        url_site_code = str(url_ishod + "/" + str(i))
+                        soup, code = parse_bs4.url_to_parse(url_site_code)
+                        if code != 200:
+                            break
+
+                        result_list[href].append(ab.get("href"))
+                        link = text_replace.link_replace(ab.text)
+                        result_list[title].append(link)
+                else:
+                    result_list[href].append('https://perevozka24.ru' + abc.get("href"))
+                    link = text_replace.link_replace(abc.text)
+                    result_list[title].append(link)
+    return result_list
 
 
 def list_links_tel(url_site="", teg="", selector="", name1="", name2="", name3="", kolzapros=0, STEP=0):
@@ -132,7 +132,7 @@ def list_links_tel(url_site="", teg="", selector="", name1="", name2="", name3="
                     result_list[name].append(links2)
                     result_list[tel1].append(tel10)
                     result_list[tel2].append("viber")
-        return result_list
+    return result_list
 
 
 if __name__ == "__main__":
