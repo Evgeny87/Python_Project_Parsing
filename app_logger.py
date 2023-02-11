@@ -2,7 +2,8 @@
 # https://habr.com/ru/post/513966/
 import logging
 
-_log_format = f"%(asctime)s - [%(levelname)s] - %(name)s - (%(filename)s).%(funcName)s(%(lineno)d) - %(message)s"
+_log_format = f"%(asctime)s - [%(levelname)s] - %(name)s - " \
+              f"(%(filename)s).%(funcName)s(%(lineno)d) - %(message)s"
 
 
 def get_file_handler():
