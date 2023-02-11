@@ -34,9 +34,9 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0, kolzapros=0, S
                 soup, code = parse_bs4.url_to_parse(url_site_code)
                 if code != 200:
                     break
-                else:
-                    result_list[href].append(url_site_code)
-                    result_list[title].append(i)
+
+                result_list[href].append(url_site_code)
+                result_list[title].append(i)
         else:
             result_list[title].append(title_ishod)
             result_list[href].append(url_ishod)
