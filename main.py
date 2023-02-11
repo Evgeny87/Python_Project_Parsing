@@ -1,4 +1,3 @@
-import time
 from itertools import zip_longest
 
 import app_logger
@@ -14,7 +13,7 @@ logger = app_logger.get_logger(__name__)
 
 
 def main():
-    start = time.time()
+    start = vremy.time.time()
     # logger.info("Программа стартует")
     # package1.process(msg="сообщение")
     # logger.warning("Это должно появиться как в консоли, так и в файле журнала")
