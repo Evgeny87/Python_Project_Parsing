@@ -36,8 +36,8 @@ def main():
     # newjson = pd.read_json("pandas0001.json", orient='index')
     # print("json: ", newjson)
 
-    logger.warning('Vse horosho, shag 1,
-                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 1,'
+                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     city_new = dict_new.dict_new(2)
     len1 = len(df.index)
@@ -78,8 +78,8 @@ def main():
     del n
     del len1
 
-    logger.warning('Vse horosho, shag 2,
-                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 2,'
+                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     spec_new = dict_new.dict_new(3)
     len2 = len(city_df.index)
@@ -123,8 +123,8 @@ def main():
     del spec_new
     del n
     del len2
-    logger.warning('Vse horosho, shag 3,
-                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 3,'
+                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     prolog_new = dict_new.dict_new(4)
     len3 = len(spec_df.index)
@@ -173,8 +173,8 @@ def main():
     del prolog_new
     del n
     del len3
-    logger.warning('Vse horosho, shag 4,
-                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 4,'
+                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     
     telephone_new = dict_new.dict_new(5)
     len4 = len(prolog_df.index)
@@ -229,8 +229,8 @@ def main():
     del telephone_new
     del n
     del len4
-    logger.warning('Vse horosho, shag 5,
-                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 5,'
+                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     del telephone_df
     del STEP
