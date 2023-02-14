@@ -133,9 +133,7 @@ def main():
         vremy.vremy_now(start)
         telephone = list_parse.list_links_tel(prolog_new["href4"][i], "div", "class", "cb-inner", "cb-name", "cb-data", kolzapros, STEP)
         print("prolog_new[href4][", i, "]: ", prolog_new["href4"][i])
-        if telephone is None:
-            pass
-        else:
+        if telephone is not None:
             len_telephone_name = len(telephone["name"])
             for j in range(len_telephone_name):
                 title1 = text_replace.link_replace(prolog_new["title1"][i])
