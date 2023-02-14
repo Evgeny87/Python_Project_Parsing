@@ -46,23 +46,29 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
             logger.error("Ошибка timeout, url: {url_site}".format(url_site=url_site))
         except requests.exceptions.ReadTimeout as errrt:
             print("ReadTimeout Error:", errrt)
-            logger.error("ReadTimeout Error: {errrt}, url: {url_site}".format(errrt=errrt, url_site=url_site))
+            logger.error("ReadTimeout Error: {errrt}, url: {url_site}".format(errrt=errrt,
+                                                                              url_site=url_site))
         except requests.exceptions.ConnectTimeout as errct:
             print("ConnectTimeout Error:", errct)
-            logger.error("ConnectTimeout Error: {errct}, url: {url_site}".format(errct=errct, url_site=url_site))
+            logger.error("ConnectTimeout Error: {errct}, url: {url_site}".format(errct=errct,
+                                                                                 url_site=url_site))
         except requests.exceptions.TooManyRedirects as errtmr:
             print("TooManyRedirects Error:", errtmr)
-            logger.error("TooManyRedirects Error: {errtmr}, url: {url_site}".format(errtmr=errtmr, url_site=url_site))
+            logger.error("TooManyRedirects Error: {errtmr},"
+                         "url: {url_site}".format(errtmr=errtmr,
+                                                  url_site=url_site))
         except requests.exceptions.URLRequired as errur:
             print("URLRequired Error:", errur)
-            logger.error("URLRequired Error: {errur}, url: {url_site}".format(errur=errur, url_site=url_site))
+            logger.error("URLRequired Error: {errur}, url: {url_site}".format(errur=errur,
+                                                                              url_site=url_site))
         except requests.exceptions.HTTPError as errh:
             print("Http Error:", errh)
             code = errh.response.status_code
             print("Ошибка url: {0}, code: {1}".format(url_site, code))
             print("Connection Error: ", response.status_code)
             logger.error("Http Error: {errh}".format(errh=errh))
-            logger.error("Ошибка url: {url_site}, code: {code}".format(url_site=url_site, code=code))
+            logger.error("Ошибка url: {url_site}, code: {code}".format(url_site=url_site,
+                                                                       code=code))
             logger.error("Connection Error: {status_code}".format(status_code=response.status_code))
             if code == 404:
                 soup = BeautifulSoup(response.text, "html.parser")
@@ -70,7 +76,8 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
                 break
         except requests.exceptions.ConnectionError as errc:
             print("Error Connecting:", errc)
-            logger.error("Error Connecting: {errc}, url: {url_site}".format(errc=errc, url_site=url_site))
+            logger.error("Error Connecting: {errc}, url: {url_site}".format(errc=errc,
+                                                                            url_site=url_site))
         except requests.exceptions.RequestException as err:
             print("OOps: Something Else", err)
             print("Ошибка скачивания url: ", url_site)
