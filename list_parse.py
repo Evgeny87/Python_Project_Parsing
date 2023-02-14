@@ -26,7 +26,7 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0,
         result_list[key] = value
     title = 'title' + str(lvl)
     href = 'href' + str(lvl)
-    if links == []:
+    if links is None:
         if lvl == 4:
             result_list[href].append(url_ishod)
             result_list[title].append("1")
@@ -53,9 +53,9 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0,
                 abc = link
             if abc is not None:
                 if lvl == 4:
-                    for links4 in abc:
-                        result_list[href].append(links4.get("href"))
-                        link = text_replace.link_replace(links4.text)
+                    for links_teh in abc:
+                        result_list[href].append(links_teh.get("href"))
+                        link = text_replace.link_replace(links_teh.text)
                         result_list[title].append(link)
                         k += 1
                     for i in range(k + 1, 100):
@@ -64,8 +64,8 @@ def list_links(url_site="", teg1="", selector="", name="", lvl=0,
                         if code != 200:
                             break
 
-                        result_list[href].append(links4.get("href"))
-                        link = text_replace.link_replace(links4.text)
+                        result_list[href].append(links_teh.get("href"))
+                        link = text_replace.link_replace(links_teh.text)
                         result_list[title].append(link)
                 else:
                     result_list[href].append('https://perevozka24.ru' + abc.get("href"))
@@ -117,7 +117,7 @@ def list_links_tel(url_site="", teg="", selector="", name1="", name2="",
         for elem_whatsapp in tel_whatsapp:
             elem_whatsapp = re.split('/|">', elem_whatsapp)
             if elem_whatsapp[0] != "[]":
-                if elem_whatsapp[3] != None:
+                if elem_whatsapp[3] is not None:
                     tel10 = text_replace.link_replace_tel("+" + elem_whatsapp[3])
                     tel10 = tel10.replace("+7", "8")
                     result_list[name].append(links2)
@@ -128,7 +128,7 @@ def list_links_tel(url_site="", teg="", selector="", name1="", name2="",
         for elem_viber in tel_viber:
             elem_viber = re.split('"|B', elem_viber)
             if elem_viber[0] != "[]":
-                if elem_viber[3] != None:
+                if elem_viber[3] is not None:
                     tel10 = text_replace.link_replace_tel("+" + elem_viber[4])
                     tel10 = tel10.replace("+7", "8")
                     result_list[name].append(links2)
