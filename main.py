@@ -133,7 +133,7 @@ def main():
         vremy.vremy_now(start)
         telephone = list_parse.list_links_tel(prolog_new["href4"][i], "div", "class", "cb-inner", "cb-name", "cb-data", kolzapros, STEP)
         print("prolog_new[href4][", i, "]: ", prolog_new["href4"][i])
-        if telephone == None:
+        if telephone is None:
             pass
         else:
             len_telephone_name = len(telephone["name"])
