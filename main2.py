@@ -36,14 +36,16 @@ def main():
     # newjson = pd.read_json("pandas0001.json", orient='index')
     # print("json: ", newjson)
 
-    logger.warning('Vse horosho, shag 1, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 1,
+                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     city_new = dict_new.dict_new(2)
     len1 = len(df.index)
     n = 1
     for i, row in df.iterrows():
         vremy.vremy_now(start)
-        city = list_parse.list_links(row[1], "a", "class", "region_link", 2, kolzapros, STEP, row[0])
+        city = list_parse.list_links(row[1], "a", "class", "region_link",
+                                     2, kolzapros, STEP, row[0])
         len_city_href2 = len(city["href2"])
         for j in range(len_city_href2):
             title1 = row[0]
@@ -76,14 +78,16 @@ def main():
     del n
     del len1
 
-    logger.warning('Vse horosho, shag 2, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 2,
+                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     spec_new = dict_new.dict_new(3)
     len2 = len(city_df.index)
     n = 1
     for i, row in city_df.iterrows():
         vremy.vremy_now(start)
-        spec = list_parse.list_links(row[3], "div", "class", "show_group", 3, kolzapros, STEP, row[2])
+        spec = list_parse.list_links(row[3], "div", "class", "show_group",
+                                     3, kolzapros, STEP, row[2])
         len_spec_href3 = len(spec["href3"])
         for j in range(len_spec_href3):
             title1 = row[0]
@@ -119,14 +123,16 @@ def main():
     del spec_new
     del n
     del len2
-    logger.warning('Vse horosho, shag 3, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 3,
+                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     prolog_new = dict_new.dict_new(4)
     len3 = len(spec_df.index)
     n = 1
     for i, row in spec_df.iterrows():
         vremy.vremy_now(start)
-        prolog = list_parse.list_links(row[5], "ul", "class", "pagination pages-pagination inline-block",
+        prolog = list_parse.list_links(row[5], "ul", "class",
+                                       "pagination pages-pagination inline-block",
                                        4, kolzapros, STEP, row[4])
         len_prolog_href4 = len(prolog["href4"])
         for j in range(len_prolog_href4):
@@ -167,14 +173,16 @@ def main():
     del prolog_new
     del n
     del len3
-    logger.warning('Vse horosho, shag 4, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 4,
+                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     
     telephone_new = dict_new.dict_new(5)
     len4 = len(prolog_df.index)
     n = 1
     for i, row in prolog_df.iterrows():
         vremy.vremy_now(start)
-        telephone = list_parse.list_links_tel(row[7], "div", "class", "cb-inner", "cb-name", "cb-data", kolzapros, STEP)
+        telephone = list_parse.list_links_tel(row[7], "div", "class", "cb-inner",
+                                              "cb-name", "cb-data", kolzapros, STEP)
         if telephone is not None:
             len_telephone_name = len(telephone["name"])
             for j in range(len_telephone_name):
@@ -221,7 +229,8 @@ def main():
     del telephone_new
     del n
     del len4
-    logger.warning('Vse horosho, shag 5, zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    logger.warning('Vse horosho, shag 5,
+                   zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     del telephone_df
     del STEP
