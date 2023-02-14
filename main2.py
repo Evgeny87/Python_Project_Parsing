@@ -175,9 +175,7 @@ def main():
     for i, row in prolog_df.iterrows():
         vremy.vremy_now(start)
         telephone = list_parse.list_links_tel(row[7], "div", "class", "cb-inner", "cb-name", "cb-data", kolzapros, STEP)
-        if telephone is None:
-            pass
-        else:
+        if telephone is not None:
             len_telephone_name = len(telephone["name"])
             for j in range(len_telephone_name):
                 title1 = text_replace.link_replace(row[0])
