@@ -41,7 +41,6 @@ def main():
 
     city_new = dict_new.dict_new(2)
     len1 = len(df.index)
-    """n = 1"""
     for i, row in df.iterrows():
         vremy.vremy_now(start)
         city = list_parse.list_links(row[1], "a", "class", "region_link",
@@ -71,11 +70,10 @@ def main():
         # print("json: ", newjson)
 
         print("i:", (i+1), " iz ", len1, "   ", (i+1) / len1 * 100, "prochentov, shag 2 iz 5")
-        """n += 1"""
 
     del df
     del city_new
-    del n
+    del i
     del len1
 
     logger.warning('Vse horosho, shag 2,'
@@ -83,7 +81,6 @@ def main():
 
     spec_new = dict_new.dict_new(3)
     len2 = len(city_df.index)
-    n = 1
     for i, row in city_df.iterrows():
         vremy.vremy_now(start)
         spec = list_parse.list_links(row[3], "div", "class", "show_group",
@@ -116,19 +113,17 @@ def main():
         # newjson = pd.read_json("pandas0003.json", orient='index')
         # print("json: ", newjson)
 
-        print("i:", n, " iz ", len2, "   ", n / len2 * 100, "prochentov, shag 3 iz 5")
-        n += 1
+        print("i:", (i+1), " iz ", len2, "   ", (i+1) / len2 * 100, "prochentov, shag 3 iz 5")
 
     del city_df
     del spec_new
-    del n
+    del i
     del len2
     logger.warning('Vse horosho, shag 3,'
                    'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
 
     prolog_new = dict_new.dict_new(4)
     len3 = len(spec_df.index)
-    n = 1
     for i, row in spec_df.iterrows():
         vremy.vremy_now(start)
         prolog = list_parse.list_links(row[5], "ul", "class",
@@ -166,19 +161,17 @@ def main():
     # newjson = pd.read_json("pandas0004.json", orient='index')
     # print("json: ", newjson)
 
-    print("i:", n, " iz ", len3, "   ", n / len3 * 100, "prochentov, shag 4 iz 5")
-    n += 1
+    print("i:", (i+1), " iz ", len3, "   ", (i+1) / len3 * 100, "prochentov, shag 4 iz 5")
 
     del spec_df
     del prolog_new
-    del n
+    del i
     del len3
     logger.warning('Vse horosho, shag 4,'
                    'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     
     telephone_new = dict_new.dict_new(5)
     len4 = len(prolog_df.index)
-    n = 1
     for i, row in prolog_df.iterrows():
         vremy.vremy_now(start)
         telephone = list_parse.list_links_tel(row[7], "div", "class", "cb-inner",
@@ -224,12 +217,11 @@ def main():
         # newjson = pd.read_json("pandas0005.json", orient='index')
         # print("json: ", newjson)
 
-        print("i:", n, " iz ", len4, "   ", n / len4 * 100, "prochentov, shag 5 iz 5")
-        n += 1
+        print("i:", (i+1), " iz ", len4, "   ", (i+1) / len4 * 100, "prochentov, shag 5 iz 5")
 
     del prolog_df
     del telephone_new
-    del n
+    del i
     del len4
     logger.warning('Vse horosho, shag 5,'
                    'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
