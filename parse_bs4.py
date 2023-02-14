@@ -1,4 +1,7 @@
-import requests, random, time, string
+import random
+import time
+import string
+import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 import app_logger
