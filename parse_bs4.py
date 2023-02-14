@@ -50,8 +50,9 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
         #                                                                       url_site=url_site))
         # except requests.exceptions.ConnectTimeout as errct:
         #     print("ConnectTimeout Error:", errct)
-        #     logger.error("ConnectTimeout Error: {errct}, url: {url_site}".format(errct=errct,
-        #                                                                          url_site=url_site))
+        #     logger.error("ConnectTimeout Error: {errct},"
+        #                  "url: {url_site}".format(errct=errct,
+        #                  url_site=url_site))
         except requests.exceptions.TooManyRedirects as errtmr:
             print("TooManyRedirects Error:", errtmr)
             logger.error("TooManyRedirects Error: {errtmr},"
