@@ -41,7 +41,7 @@ def main():
 
     city_new = dict_new.dict_new(2)
     len1 = len(df.index)
-    n = 1
+    """n = 1"""
     for i, row in df.iterrows():
         vremy.vremy_now(start)
         city = list_parse.list_links(row[1], "a", "class", "region_link",
@@ -70,8 +70,8 @@ def main():
         # newjson = pd.read_json("pandas0002.json", orient='index')
         # print("json: ", newjson)
 
-        print("i:", n, " iz ", len1, "   ", n / len1 * 100, "prochentov, shag 2 iz 5")
-        n += 1
+        print("i:", (i+1), " iz ", len1, "   ", (i+1) / len1 * 100, "prochentov, shag 2 iz 5")
+        """n += 1"""
 
     del df
     del city_new
