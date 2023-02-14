@@ -73,7 +73,7 @@ def main():
 
     del df
     del city_new
-    del i
+    # del i
     del len1
 
     logger.warning('Vse horosho, shag 2,'
@@ -117,7 +117,7 @@ def main():
 
     del city_df
     del spec_new
-    del i
+    # del i
     del len2
     logger.warning('Vse horosho, shag 3,'
                    'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
@@ -165,7 +165,7 @@ def main():
 
     del spec_df
     del prolog_new
-    del i
+    # del i
     del len3
     logger.warning('Vse horosho, shag 4,'
                    'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
@@ -221,7 +221,7 @@ def main():
 
     del prolog_df
     del telephone_new
-    del i
+    # del i
     del len4
     logger.warning('Vse horosho, shag 5,'
                    'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
