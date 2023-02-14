@@ -1,10 +1,7 @@
-import requests
+import requests, random, time, string
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
-import time
 import app_logger
-import random
-import string
 
 
 logger = app_logger.get_logger(__name__)
