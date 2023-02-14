@@ -169,7 +169,6 @@ def main():
     del len3
     logger.warning('Vse horosho, shag 4,'
                    'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
-    
     telephone_new = dict_new.dict_new(5)
     len4 = len(prolog_df.index)
     for i, row in prolog_df.iterrows():
