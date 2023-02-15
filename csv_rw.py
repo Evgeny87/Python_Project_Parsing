@@ -106,15 +106,21 @@ def reader_csv(file_name="", lvl=0, encoding_user_file=""):
                     except Exception as e:
                         print("Ошибка при работе чтение строки"
                               "из файла:", e)
-                        logger.error("Ошибка при работе чтение строки"
-                                     "из файла {file_name}: "
-                                     "{e}".format(e=e, file_name=file_name))
+                        logger.error("Ошибка при работе чтение строки из файла "
+                                     "%file_name: %e", file_name, e)
+                        # logger.error("Ошибка при работе чтение строки"
+                        #              "из файла {file_name}: "
+                        #              "{e}".format(e=e, file_name=file_name))
                 count += 1
             print(f'Всего в файле {count} строк.')
             logger.warning('Всего в файле {count} строк.'.format(count=count))
     except Exception as e:
         print("Ошибка при работе с файлом:", e)
-        logger.error("Ошибка при работе с файлом {file_name}: {e}".format(e=e, file_name=file_name))
+        logger.error("Ошибка при работе чтение строки из файла "
+                      "%file_name: %e", file_name, e)
+        # logger.error("Ошибка при работе чтение строки"
+        #              "из файла {file_name}: "
+        #              "{e}".format(e=e, file_name=file_name))
     return dict_csv_new
 
 
@@ -133,8 +139,12 @@ def writer_csv(export_data, file_name=""):
             writer.writerows(export_data)
             # logger.info('Vse horosho, zapisan file: {file_name}'.format(file_name=file_name))
     except Exception as e:
-        print("Ошибка при работе с файлом:", e)
-        logger.error("Ошибка при работе с файлом {file_name}: {e}".format(e=e, file_name=file_name))
+        print("Ошибка при работе с файлом:", e)        
+        logger.error("Ошибка при работе чтение строки из файла "
+                     "%file_name: %e", file_name, e)
+        # logger.error("Ошибка при работе чтение строки"
+        #              "из файла {file_name}: "
+        #              "{e}".format(e=e, file_name=file_name))
 
 
 if __name__ == "__main__":
