@@ -48,8 +48,9 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
             logger.error("Ошибка timeout, url: %url_site", url_site) 
         except requests.exceptions.ReadTimeout as errrt:
             print("ReadTimeout Error:", errrt)
-            logger.error("ReadTimeout Error: {errrt}, url: {url_site}".format(errrt=errrt,
-                                                                              url_site=url_site))
+            logger.error("ReadTimeout Error: %errrt, url: %url_site", errrt, url_site)
+        #     logger.error("ReadTimeout Error: {errrt}, url: {url_site}".format(errrt=errrt,
+        #                                                                       url_site=url_site))
         # except requests.exceptions.ConnectTimeout as errct:
         #     print("ConnectTimeout Error:", errct)
         #     logger.error("ConnectTimeout Error: {errct},"
