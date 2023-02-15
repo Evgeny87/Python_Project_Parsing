@@ -26,8 +26,10 @@ def main():
     data = [item_1, item_2]
     export_data = zip_longest(*data, fillvalue="")
     csv_rw.writer_csv(export_data, "dict0001")
+    # logger.warning('Vse horosho, shag 1,'
+    #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     logger.warning('Vse horosho, shag 1,'
-                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+                   'zakonchilsia: %vremy_now', vremy.vremy_now(start))   
     city_new = dict_new.dict_new(2)
     len_region_href1 = len(region1["href1"])
     for i in range(len_region_href1):
@@ -54,8 +56,10 @@ def main():
         data = [item_1, item_2, item_3, item_4]
         export_data = zip_longest(*data, fillvalue="")
         csv_rw.writer_csv(export_data, "dict0002")
+    # logger.warning('Vse horosho, shag 2,'
+    #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     logger.warning('Vse horosho, shag 2,'
-                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+                   'zakonchilsia: %vremy_now', vremy.vremy_now(start))
     spec_new = dict_new.dict_new(3)
     len_citynew_href2 = len(city_new["href2"])
     for i in range(len_citynew_href2):
@@ -88,8 +92,10 @@ def main():
         data = [item_1, item_2, item_3, item_4, item_5, item_6]
         export_data = zip_longest(*data, fillvalue="")
         csv_rw.writer_csv(export_data, "dict0003")
+    # logger.warning('Vse horosho, shag 3,'
+    #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     logger.warning('Vse horosho, shag 3,'
-                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+                   'zakonchilsia: %vremy_now', vremy.vremy_now(start))
     prolog_new = dict_new.dict_new(4)
     len_specnew_href3 = len(spec_new["href3"])
     for i in range(len_specnew_href3):
@@ -129,8 +135,10 @@ def main():
         data = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8]
         export_data = zip_longest(*data, fillvalue="")
         csv_rw.writer_csv(export_data, "dict0004")
+    # logger.warning('Vse horosho, shag 4,'
+    #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     logger.warning('Vse horosho, shag 4,'
-                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+                   'zakonchilsia: %vremy_now', vremy.vremy_now(start))
     telephone_new = dict_new.dict_new(5)
     len_prolog_href4 = len(prolog_new["href4"])
     for i in range(len_prolog_href4):
@@ -184,8 +192,10 @@ def main():
                 item_7, item_8, item_9, item_10, item_11]
         export_data = zip_longest(*data, fillvalue="")
         csv_rw.writer_csv(export_data, "dict0005")
+    # logger.warning('Vse horosho, shag 5,'
+    #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     logger.warning('Vse horosho, shag 5,'
-                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+                   'zakonchilsia: %vremy_now', vremy.vremy_now(start))
     # logger.info("Программа завершила работу")
 
 
