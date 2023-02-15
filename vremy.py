@@ -17,7 +17,8 @@ def convert_to_preferred_format(sec):
     # print("seconds value in seconds: ", sec)
     # print("seconds value in dol_seconds: ", dol_sec)
     # return "%01d day, %02d:%02d:%02d, %1.8f" % (day, hour, minut, sec, dol_sec)
-    return "%day %hour:%minut:%sec %dol_sec", day, hour, minut, sec, dol_sec
+    vremy = "%day %hour:%minut:%sec %dol_sec", day, hour, minut, sec, dol_sec
+    return vremy
 
 
 def vremy_now(start):
