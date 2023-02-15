@@ -26,10 +26,10 @@ def main():
     data = [item_1, item_2]
     export_data = zip_longest(*data, fillvalue="")
     csv_rw.writer_csv(export_data, "dict0001")
-    # logger.warning('Vse horosho, shag 1,'
-    #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
-    vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 1, zakonchilsia: %vremy_now', vremy_now)   
+    logger.warning('Vse horosho, shag 1,'
+                   'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
+    # vremy_now = vremy.vremy_now(start)
+    # logger.warning('Vse horosho, shag 1, zakonchilsia: %vremy_now', vremy_now)   
     city_new = dict_new.dict_new(2)
     len_region_href1 = len(region1["href1"])
     for i in range(len_region_href1):
