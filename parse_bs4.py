@@ -69,7 +69,8 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
         except requests.exceptions.HTTPError as errh:
             print("Http Error:", errh)
             code = errh.response.status_code
-            print("Ошибка url: {0}, code: {1}".format(url_site, code))
+            # print("Ошибка url: {0}, code: {1}".format(url_site, code))
+            print("Ошибка url: %url_site, code: %code", url_site, code)
             print("Connection Error: ", response.status_code)
             # logger.error("Http Error: {errh}".format(errh=errh))
             # logger.error("Ошибка url: {url_site}, code: {code}".format(url_site=url_site,
