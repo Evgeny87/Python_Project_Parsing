@@ -140,7 +140,7 @@ def writer_csv(export_data, file_name=""):
             writer.writerows(export_data)
             # logger.info('Vse horosho, zapisan file: {file_name}'.format(file_name=file_name))
     except Exception as e:
-        print("Ошибка при работе с файлом:", e)        
+        print("Ошибка при работе с файлом:", e)
         logger.error("Ошибка при работе чтение строки из файла "
                      "%file_name: %e", file_name, e)
         # logger.error("Ошибка при работе чтение строки"
