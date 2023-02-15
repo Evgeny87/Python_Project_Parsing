@@ -101,9 +101,11 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
             # soup = BeautifulSoup(response.content, "html.parser")
             # logger.info('Vse horosho soup gotov')
             break
-        print("Oshibka: ", i+1)
-        logger.error("Oshibka: {i}, url: {url_site}".format(i=i+1, url_site=url_site))
-        time.sleep(i+1)
+        j = i + 1
+        print("Oshibka: ", j)
+        # logger.error("Oshibka: {i}, url: {url_site}".format(i=i+1, url_site=url_site))
+        logger.error("Oshibka: %j, url: %url_site", j, url_site)
+        time.sleep(j)
         i += 1
     # else:
     #     print("Poproboval 10 raz otpravit")
