@@ -50,11 +50,13 @@ python3 main.py (или python main.py)
 ===================================================
 
 pylint
+
 pylint $(git ls-files '*.py')
-    С – конвенция (convention)
-    R – рефакторинг (refactor)
-    W – предупреждение (warning)
-    E – ошибка (error)
-    
 
+С – конвенция (convention)
 
+R – рефакторинг (refactor)
+
+W – предупреждение (warning)
+
+E – ошибка (error)
