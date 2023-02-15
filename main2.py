@@ -77,11 +77,11 @@ def main():
     del city_new
     # del i
     del len1
-    
+
     # logger.warning('Vse horosho, shag 2,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 2, zakonchilsia: %finish_vremy_now', finish_vremy_now)  
+    logger.warning('Vse horosho, shag 2, zakonchilsia: %finish_vremy_now', finish_vremy_now)
 
     spec_new = dict_new.dict_new(3)
     len2 = len(city_df.index)
@@ -123,11 +123,11 @@ def main():
     del spec_new
     # del i
     del len2
-    
+
     # logger.warning('Vse horosho, shag 3,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 3, zakonchilsia: %finish_vremy_now', finish_vremy_now)    
+    logger.warning('Vse horosho, shag 3, zakonchilsia: %finish_vremy_now', finish_vremy_now)
 
     prolog_new = dict_new.dict_new(4)
     len3 = len(spec_df.index)
@@ -174,12 +174,12 @@ def main():
     del prolog_new
     # del i
     del len3
-    
+
     # logger.warning('Vse horosho, shag 4,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 4, zakonchilsia: %finish_vremy_now', finish_vremy_now)  
-    
+    logger.warning('Vse horosho, shag 4, zakonchilsia: %finish_vremy_now', finish_vremy_now)
+
     telephone_new = dict_new.dict_new(5)
     len4 = len(prolog_df.index)
     for i, row in prolog_df.iterrows():
@@ -237,7 +237,7 @@ def main():
     # logger.warning('Vse horosho, shag 5,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 5, zakonchilsia: %finish_vremy_now', finish_vremy_now)  
+    logger.warning('Vse horosho, shag 5, zakonchilsia: %finish_vremy_now', finish_vremy_now)
 
     del telephone_df
     del STEP
