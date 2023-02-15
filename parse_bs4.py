@@ -45,7 +45,8 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
             # logger.error("Timeout Error: {errt}".format(errt=errt))
             # logger.error("Ошибка timeout, url: {url_site}".format(url_site=url_site))
             logger.error("Timeout Error: %errt", errt)
-            logger.error("Ошибка timeout, url: %url_site", url_site)            
+            logger.error("Ошибка timeout, url: %url_site", url_site) 
+        
         """\ 
         except requests.exceptions.ReadTimeout as errrt:
             print("ReadTimeout Error:", errrt)
@@ -57,11 +58,14 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
                          "url: {url_site}".format(errct=errct,
                          url_site=url_site))
         """
+        
         except requests.exceptions.TooManyRedirects as errtmr:
             print("TooManyRedirects Error:", errtmr)
+            """/
             # logger.error("TooManyRedirects Error: {errtmr},"
             #              "url: {url_site}".format(errtmr=errtmr,
             #                                       url_site=url_site))
+            """
             logger.error("TooManyRedirects Error: %errtmr, url: %url_site", errtmr, url_site)
         except requests.exceptions.URLRequired as errur:
             print("URLRequired Error:", errur)
