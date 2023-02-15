@@ -113,7 +113,8 @@ def reader_csv(file_name="", lvl=0, encoding_user_file=""):
                         #              "{e}".format(e=e, file_name=file_name))
                 count += 1
             print(f'Всего в файле {count} строк.')
-            logger.warning('Всего в файле {count} строк.'.format(count=count))
+            # logger.warning('Всего в файле {count} строк.'.format(count=count))
+            logger.warning('Всего в файле %count строк.', count)
     except Exception as e:
         print("Ошибка при работе с файлом:", e)
         logger.error("Ошибка при работе чтение строки из файла "
