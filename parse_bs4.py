@@ -75,7 +75,8 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
             # logger.error("Http Error: {errh}".format(errh=errh))
             # logger.error("Ошибка url: {url_site}, code: {code}".format(url_site=url_site,
             #                                                            code=code))
-            # logger.error("Connection Error: {status_code}".format(status_code=response.status_code))
+            # logger.error("Connection Error: " 
+            #              "{status_code}".format(status_code=response.status_code))
             
             logger.error("Http Error: %errh", errh)
             logger.error("Ошибка url: %url_site, code: %code", url_site, code)
