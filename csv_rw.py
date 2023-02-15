@@ -143,10 +143,11 @@ def writer_csv(export_data, file_name=""):
         print("Ошибка при работе с файлом:", e)        
         logger.error("Ошибка при работе чтение строки из файла "
                      "%file_name: %e", file_name, e)
-        # logger.error("Ошибка при работе чтение строки"
-        #              "из файла {file_name}: "
-        #              "{e}".format(e=e, file_name=file_name))
-
+        """ logger.error("Ошибка при работе чтение строки"
+                     "из файла {file_name}: "
+                     "{e}".format(e=e, file_name=file_name))
+        """
+    
 
 if __name__ == "__main__":
     pass
