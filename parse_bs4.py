@@ -79,7 +79,8 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
             
             logger.error("Http Error: %errh", errh)
             logger.error("Ошибка url: %url_site, code: %code", url_site, code)
-            logger.error("Connection Error: %status_code", status_code)
+            # logger.error("Connection Error: %status_code", status_code)
+            logger.error("Connection Error: %status_code", response.status_code)
             
             if code == 404:
                 soup = BeautifulSoup(response.text, "html.parser")
