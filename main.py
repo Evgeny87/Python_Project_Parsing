@@ -29,7 +29,7 @@ def main():
     # logger.warning('Vse horosho, shag 1,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 1, zakonchilsia: %finish_vremy_now', finish_vremy_now)   
+    logger.warning('Vse horosho, shag 1, zakonchilsia: %finish_vremy_now', finish_vremy_now)
     city_new = dict_new.dict_new(2)
     len_region_href1 = len(region1["href1"])
     for i in range(len_region_href1):
@@ -59,7 +59,7 @@ def main():
     # logger.warning('Vse horosho, shag 2,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 2, zakonchilsia: %finish_vremy_now', finish_vremy_now)  
+    logger.warning('Vse horosho, shag 2, zakonchilsia: %finish_vremy_now', finish_vremy_now)
     spec_new = dict_new.dict_new(3)
     len_citynew_href2 = len(city_new["href2"])
     for i in range(len_citynew_href2):
@@ -95,7 +95,7 @@ def main():
     # logger.warning('Vse horosho, shag 3,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 3, zakonchilsia: %finish_vremy_now', finish_vremy_now)    
+    logger.warning('Vse horosho, shag 3, zakonchilsia: %finish_vremy_now', finish_vremy_now)
     prolog_new = dict_new.dict_new(4)
     len_specnew_href3 = len(spec_new["href3"])
     for i in range(len_specnew_href3):
@@ -138,7 +138,7 @@ def main():
     # logger.warning('Vse horosho, shag 4,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 4, zakonchilsia: %finish_vremy_now', finish_vremy_now)  
+    logger.warning('Vse horosho, shag 4, zakonchilsia: %finish_vremy_now', finish_vremy_now)
     telephone_new = dict_new.dict_new(5)
     len_prolog_href4 = len(prolog_new["href4"])
     for i in range(len_prolog_href4):
@@ -195,7 +195,7 @@ def main():
     # logger.warning('Vse horosho, shag 5,'
     #                'zakonchilsia: {vremy_now}'.format(vremy_now=vremy.vremy_now(start)))
     finish_vremy_now = vremy.vremy_now(start)
-    logger.warning('Vse horosho, shag 5, zakonchilsia: %finish_vremy_now', finish_vremy_now)  
+    logger.warning('Vse horosho, shag 5, zakonchilsia: %finish_vremy_now', finish_vremy_now)
     # logger.info("Программа завершила работу")
 
 
