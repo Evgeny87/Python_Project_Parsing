@@ -60,7 +60,7 @@ def url_to_parse(url_site="", kol_zapros=0, STEP=0):
             # logger.error("TooManyRedirects Error: {errtmr},"
             #              "url: {url_site}".format(errtmr=errtmr,
             #                                       url_site=url_site))
-            logger.error("TooManyRedirects Error: %errtmr, url: %url_site", errtmr, url_site
+            logger.error("TooManyRedirects Error: %errtmr, url: %url_site", errtmr, url_site)
         except requests.exceptions.URLRequired as errur:
             print("URLRequired Error:", errur)
             # logger.error("URLRequired Error: {errur}, url: {url_site}".format(errur=errur,
