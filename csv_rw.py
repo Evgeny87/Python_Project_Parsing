@@ -26,83 +26,106 @@ def reader_csv(file_name="", lvl=0, encoding_user_file=""):
                     try:
                         # Вывод строк
                         k = len(row)
-                        if k == 1:
-                            dict_csv_new["title1"].append(row[0])
-                        elif k == 2:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                        elif k == 3:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
-                        elif k == 4:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
+						if k >=1:
+							dict_csv_new["title1"].append(row[0])
+						if k >= 2:
+							dict_csv_new["href1"].append(row[1])
+						if k >= 3:
+							dict_csv_new["title2"].append(row[2])
+						if k >= 4:
                             dict_csv_new["href2"].append(row[3])
-                        elif k == 5:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
-                            dict_csv_new["href2"].append(row[3])
+                        if k >= 5:
                             dict_csv_new["title3"].append(row[4])
-                        elif k == 6:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
-                            dict_csv_new["href2"].append(row[3])
-                            dict_csv_new["title3"].append(row[4])
+                        if k >= 6:
                             dict_csv_new["href3"].append(row[5])
-                        elif k == 7:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
-                            dict_csv_new["href2"].append(row[3])
-                            dict_csv_new["title3"].append(row[4])
-                            dict_csv_new["href3"].append(row[5])
+                        if k >= 7:
                             dict_csv_new["title4"].append(row[6])
-                        elif k == 8:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
-                            dict_csv_new["href2"].append(row[3])
-                            dict_csv_new["title3"].append(row[4])
-                            dict_csv_new["href3"].append(row[5])
-                            dict_csv_new["title4"].append(row[6])
+                        if k >= 8:
                             dict_csv_new["href4"].append(row[7])
-                        elif k == 9:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
-                            dict_csv_new["href2"].append(row[3])
-                            dict_csv_new["title3"].append(row[4])
-                            dict_csv_new["href3"].append(row[5])
-                            dict_csv_new["title4"].append(row[6])
-                            dict_csv_new["href4"].append(row[7])
+                        if k >= 9:
                             dict_csv_new["name"].append(row[8])
-                        elif k == 10:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
-                            dict_csv_new["href2"].append(row[3])
-                            dict_csv_new["title3"].append(row[4])
-                            dict_csv_new["href3"].append(row[5])
-                            dict_csv_new["title4"].append(row[6])
-                            dict_csv_new["href4"].append(row[7])
-                            dict_csv_new["name"].append(row[8])
+                        if k >= 10:
                             dict_csv_new["tel1"].append(row[9])
-                        elif k > 10:
-                            dict_csv_new["title1"].append(row[0])
-                            dict_csv_new["href1"].append(row[1])
-                            dict_csv_new["title2"].append(row[2])
-                            dict_csv_new["href2"].append(row[3])
-                            dict_csv_new["title3"].append(row[4])
-                            dict_csv_new["href3"].append(row[5])
-                            dict_csv_new["title4"].append(row[6])
-                            dict_csv_new["href4"].append(row[7])
-                            dict_csv_new["name"].append(row[8])
-                            dict_csv_new["tel1"].append(row[9])
+                        elif k >= 11:
                             dict_csv_new["tel2"].append(row[10])
+
+                        # if k == 1:
+                        #     dict_csv_new["title1"].append(row[0])
+                        # elif k == 2:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        # elif k == 3:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        # elif k == 4:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        #     dict_csv_new["href2"].append(row[3])
+                        # elif k == 5:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        #     dict_csv_new["href2"].append(row[3])
+                        #     dict_csv_new["title3"].append(row[4])
+                        # elif k == 6:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        #     dict_csv_new["href2"].append(row[3])
+                        #     dict_csv_new["title3"].append(row[4])
+                        #     dict_csv_new["href3"].append(row[5])
+                        # elif k == 7:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        #     dict_csv_new["href2"].append(row[3])
+                        #     dict_csv_new["title3"].append(row[4])
+                        #     dict_csv_new["href3"].append(row[5])
+                        #     dict_csv_new["title4"].append(row[6])
+                        # elif k == 8:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        #     dict_csv_new["href2"].append(row[3])
+                        #     dict_csv_new["title3"].append(row[4])
+                        #     dict_csv_new["href3"].append(row[5])
+                        #     dict_csv_new["title4"].append(row[6])
+                        #     dict_csv_new["href4"].append(row[7])
+                        # elif k == 9:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        #     dict_csv_new["href2"].append(row[3])
+                        #     dict_csv_new["title3"].append(row[4])
+                        #     dict_csv_new["href3"].append(row[5])
+                        #     dict_csv_new["title4"].append(row[6])
+                        #     dict_csv_new["href4"].append(row[7])
+                        #     dict_csv_new["name"].append(row[8])
+                        # elif k == 10:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        #     dict_csv_new["href2"].append(row[3])
+                        #     dict_csv_new["title3"].append(row[4])
+                        #     dict_csv_new["href3"].append(row[5])
+                        #     dict_csv_new["title4"].append(row[6])
+                        #     dict_csv_new["href4"].append(row[7])
+                        #     dict_csv_new["name"].append(row[8])
+                        #     dict_csv_new["tel1"].append(row[9])
+                        # elif k > 10:
+                        #     dict_csv_new["title1"].append(row[0])
+                        #     dict_csv_new["href1"].append(row[1])
+                        #     dict_csv_new["title2"].append(row[2])
+                        #     dict_csv_new["href2"].append(row[3])
+                        #     dict_csv_new["title3"].append(row[4])
+                        #     dict_csv_new["href3"].append(row[5])
+                        #     dict_csv_new["title4"].append(row[6])
+                        #     dict_csv_new["href4"].append(row[7])
+                        #     dict_csv_new["name"].append(row[8])
+                        #     dict_csv_new["tel1"].append(row[9])
+                        #     dict_csv_new["tel2"].append(row[10])
                     except Exception as e:
                         print("Ошибка при работе чтение строки"
                               "из файла:", e)
