@@ -26,13 +26,13 @@ def reader_csv(file_name="", lvl=0, encoding_user_file=""):
                     try:
                         # Вывод строк
                         k = len(row)
-						if k >=1:
-							dict_csv_new["title1"].append(row[0])
-						if k >= 2:
-							dict_csv_new["href1"].append(row[1])
-						if k >= 3:
-							dict_csv_new["title2"].append(row[2])
-						if k >= 4:
+			if k >=1:
+			    dict_csv_new["title1"].append(row[0])
+			if k >= 2:
+			    dict_csv_new["href1"].append(row[1])
+			if k >= 3:
+			    dict_csv_new["title2"].append(row[2])
+			if k >= 4:
                             dict_csv_new["href2"].append(row[3])
                         if k >= 5:
                             dict_csv_new["title3"].append(row[4])
