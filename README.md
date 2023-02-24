@@ -1,5 +1,8 @@
 # Курсовой проект по парсингу
 
+## Презентация
+https://docs.google.com/presentation/d/1sEXRyRXKF-KllTjflMS0_PH3eWWFIwiG5ah7LSzvK6Y/edit?usp=sharing
+
 main.py - первый вариант запуска
 
 main2.py - второй вариант запуска (использовал PANDAS)
