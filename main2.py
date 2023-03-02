@@ -18,8 +18,7 @@ def main():
     # logger.warning("Это должно появиться как в консоли, так и в файле журнала")
     url = "https://perevozka24.ru/arenda-spetstehniki"
     STEP = 10
-    kolzapros = 0
-    region1 = list_parse.list_links(url, "a", "class", "region_link_href", 1, kolzapros, STEP)
+    region1 = list_parse.list_links(url, "a", "class", "region_link_href", 1, STEP)
     del url
 
     df = pd.DataFrame(region1)
@@ -46,7 +45,7 @@ def main():
     for i, row in df.iterrows():
         vremy.vremy_now(start)
         city = list_parse.list_links(row[1], "a", "class", "region_link",
-                                     2, kolzapros, STEP, row[0])
+                                     2, STEP, row[0])
         len_city_href2 = len(city["href2"])
         for j in range(len_city_href2):
             title1 = row[0]
@@ -88,7 +87,7 @@ def main():
     for i, row in city_df.iterrows():
         vremy.vremy_now(start)
         spec = list_parse.list_links(row[3], "div", "class", "show_group",
-                                     3, kolzapros, STEP, row[2])
+                                     3, STEP, row[2])
         len_spec_href3 = len(spec["href3"])
         for j in range(len_spec_href3):
             title1 = row[0]
@@ -135,7 +134,7 @@ def main():
         vremy.vremy_now(start)
         prolog = list_parse.list_links(row[5], "ul", "class",
                                        "pagination pages-pagination inline-block",
-                                       4, kolzapros, STEP, row[4])
+                                       4, STEP, row[4])
         len_prolog_href4 = len(prolog["href4"])
         for j in range(len_prolog_href4):
             title1 = row[0]
@@ -185,7 +184,7 @@ def main():
     for i, row in prolog_df.iterrows():
         vremy.vremy_now(start)
         telephone = list_parse.list_links_tel(row[7], "div", "class", "cb-inner",
-                                              "cb-name", "cb-data", kolzapros, STEP)
+                                              "cb-name", "cb-data", STEP)
         if telephone is not None:
             len_telephone_name = len(telephone["name"])
             for j in range(len_telephone_name):
