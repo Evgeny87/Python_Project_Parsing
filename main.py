@@ -19,8 +19,7 @@ def main():
     # logger.warning("Это должно появиться как в консоли, так и в файле журнала")
     url = "https://perevozka24.ru/arenda-spetstehniki"
     STEP = 10
-    kolzapros = 0
-    region1 = list_parse.list_links(url, "a", "class", "region_link_href", 1, kolzapros, STEP)
+    region1 = list_parse.list_links(url, "a", "class", "region_link_href", 1, STEP)
     item_1 = region1["title1"]
     item_2 = region1["href1"]
     data = [item_1, item_2]
@@ -38,7 +37,7 @@ def main():
         print("i:", a, " iz ", len1, "   ", a / len1 * 100, "prochentov, shag 2 iz 5")
         vremy.vremy_now(start)
         city = list_parse.list_links(region1["href1"][i], "a", "class","region_link",
-                                     2, kolzapros, STEP, region1["title1"][i])
+                                     2, STEP, region1["title1"][i])
         len_city_href2 = len(city["href2"])
         for j in range(len_city_href2):
             title1 = region1["title1"][i]
@@ -68,7 +67,7 @@ def main():
         print("i:", b, " iz ", len2, "   ", b / len2 * 100, "prochentov, shag 3 iz 5")
         vremy.vremy_now(start)
         spec = list_parse.list_links(city_new["href2"][i], "div", "class", "show_group",
-                                     3, kolzapros, STEP, city_new["title2"][i])
+                                     3, STEP, city_new["title2"][i])
         len_spec_href3 = len(spec["href3"])
         for j in range(len_spec_href3):
             title1 = city_new["title1"][i]
@@ -105,7 +104,7 @@ def main():
         vremy.vremy_now(start)
         prolog = list_parse.list_links(spec_new["href3"][i], "ul", "class",
                                        "pagination pages-pagination inline-block",
-                                       4, kolzapros, STEP, spec_new["title3"][i])
+                                       4, STEP, spec_new["title3"][i])
         len_prolog_href4 = len(prolog["href4"])
         for j in range(len_prolog_href4):
             title1 = spec_new["title1"][i]
@@ -147,8 +146,7 @@ def main():
         print("i:", c, " iz ", len4, "   ", c / len4 * 100, "prochentov, shag 5 iz 5")
         vremy.vremy_now(start)
         telephone = list_parse.list_links_tel(prolog_new["href4"][i], "div", "class",
-                                              "cb-inner", "cb-name", "cb-data",
-                                              kolzapros, STEP)
+                                              "cb-inner", "cb-name", "cb-data", STEP)
         print("prolog_new[href4][", i, "]: ", prolog_new["href4"][i])
         if telephone is not None:
             len_telephone_name = len(telephone["name"])
