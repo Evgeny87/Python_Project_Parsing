@@ -240,7 +240,6 @@ def main():
 
     del telephone_df
     del STEP
-    del kolzapros
 
     # logger.info("Программа завершила работу")
 
