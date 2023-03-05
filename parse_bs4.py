@@ -17,7 +17,7 @@ def generate_alphanum_random_string(length):
     return rand_string
 
 
-def random_ua_and_cookies(step=None, kol_zapros=[0], ua=[], cookies_random=[], STEP=[10]):
+def random_ua_and_cookies(step=None, kol_zapros=[0], ua=[0], cookies_random=[0], STEP=[10]):
     if step is not None:
         STEP[0] = step
     if kol_zapros[0] == 0 or kol_zapros[0] % STEP[0] == 0:
@@ -25,13 +25,13 @@ def random_ua_and_cookies(step=None, kol_zapros=[0], ua=[], cookies_random=[], S
         us_ag = ua1.random
         ua1 = us_ag.strip()
         cookies_random1 = str(generate_alphanum_random_string(31))
-        ua.append(ua1)  # NOT: ua = [ua1]
-        cookies_random.append(cookies_random1)
+        ua[0] = ua1
+        cookies_random[0] = cookies_random1
 
     kol_zapros[0] += 1
-    i = len(ua) - 1
-    j = len(cookies_random) - 1
-    return ua[i], cookies_random[j]
+    # i = len(ua) - 1
+    # j = len(cookies_random) - 1
+    return ua[0], cookies_random[0]
 
 
 def url_to_parse(url_site="", STEP=0):
